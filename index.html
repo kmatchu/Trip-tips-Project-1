@@ -9,7 +9,7 @@
         crossorigin="anonymous"></script> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
 
 </head>
 
@@ -32,12 +32,14 @@
     <div class="container">
         <div class="row" id="jumbo">
             <div class="col-md-offset-1 col-md-10 searchJumbo">
+                <div id="searchJumbo">
                     <form id="search-formj">
                             <label for="search-input">Search a City, State</label>
-                            <input type="text" id="city-input">                      
+                            <input type="text" id="city-inputj">                      
                             <!-- This button will trigger our AJAX call -->
                             <input id="find-city" type="submit" value="Search">
                           </form>
+                    </div>
             </div>
         </div>
     </div>
@@ -189,19 +191,10 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="assets/script.js"></script>
+<script src="assets/setWeatherBoxFxn.js"></script>
 
-<!-- SOME SCRIPT EXAMPLES FOR ICONS -->
-
-<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-
-
-<i class="fas fa-utensils"></i>
-
-<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-<span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span>
-<span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
-<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
-<span class="glyphicon glyphicon-music" aria-hidden="true"></span>
 
 
 </body>

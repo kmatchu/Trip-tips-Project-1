@@ -1,7 +1,7 @@
-var setWeatherBox = function (city) {
-    arrayCity = city.split(",");
+var setWeatherBox = function (lowerCity) {
+    arrayCity = lowerCity.split(",");
     var cityName = arrayCity[0];
-    var stateAbrv = arrayCity[1];
+    var stateAbrv = arrayCity[1].trim();
 
     var weatherAPI = "http://api.wunderground.com/api/9b91158e94439d41/conditions/q/" + stateAbrv + "/" + cityName + ".json";
     var cityPicAPI = "https://api.teleport.org/api/urban_areas/slug:" + cityName + "/images/";
