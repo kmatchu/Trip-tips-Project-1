@@ -1,5 +1,5 @@
 #topBar{
-    height: 200px;
+    height: 100px;
     border-image-width: 5px;
     border-color: blueviolet;
     margin-top: 10px;
@@ -18,9 +18,13 @@
 }
 
 #jumbo{
-
+    box-sizing: border-box;
+    height: 200px;
+    width: 100%;
 }
 
-.searchJumbo{
-    
+#search-formj {
+    margin-top: 100px;
+    margin-left: 300px;
+
 }
