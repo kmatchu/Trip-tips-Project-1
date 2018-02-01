@@ -1,13 +1,20 @@
 //for both search bars:
+
 $("#search-form").on("click", function(event) {
     event.preventDefault();
     var city = $("#city-input").val();
+    console.log(city);
+    setWeatherBox(city);
 });
 
 $("#search-formj").on("click", function(event) {
     event.preventDefault();
     var city = $("#city-input").val();
+    console.log(city);
+    setWeatherBox(city);
 });
+
+
 
 $(".food_container").hide();
 $(".monument_container").hide();
@@ -33,5 +40,6 @@ $("#landmark_icon").on("click", function(event) {
     console.log("landmark");
     $(".monument_container").toggle();
 });
+
 
 
