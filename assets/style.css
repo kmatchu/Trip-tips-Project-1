@@ -27,10 +27,10 @@
     
 }
 
-.food_container, .monument_container, .news_container, .concert_container{
+/* .food_container, .monument_container, .news_container, .concert_container{
     visibility: hidden;
 
-}
+} */
 
 #search-formj {
     margin-top: 100px;
