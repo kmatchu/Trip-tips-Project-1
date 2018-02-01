@@ -23,8 +23,18 @@
     width: 100%;
 }
 
+.searchJumbo{
+    
+}
+
+.food_container, .monument_container, .news_container, .concert_container{
+    visibility: hidden;
+
+}
+
 #search-formj {
     margin-top: 100px;
     margin-left: 300px;
 
 }
+
