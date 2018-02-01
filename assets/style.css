@@ -24,3 +24,8 @@
 .searchJumbo{
     
 }
+
+.food_container, .monument_container, .news_container, .concert_container{
+    visibility: hidden;
+
+}
