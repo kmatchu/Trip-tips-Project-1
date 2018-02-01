@@ -15,19 +15,31 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row" id="topBar">
             <div class="col-md-4 logo">LOGO</div>
             <div class="col-md-offset-1 col-md-3 cityButtons">Dynamically Added Buttons HERE</div>
-            <div class="col-md-offset-1 col-md-3 searchBar">Search Bar
-                <form name="topSearch" action="/action_page.php" onsubmit="return validateForm()" method="post">
-                        Search: <input type="text" name="cityName">
-                        <input type="submit" value="Submit">
-                        </form>
+            <div class="col-md-offset-1 col-md-3 searchBar">
+                    <form id="search-form">
+                            <label for="search-input">Search a City, State</label>
+                            <input type="text" id="city-input"><br>
+                      
+                            <!-- This button will trigger our AJAX call -->
+                            <input id="find-city" type="submit" value="Search">
+                          </form>
             </div>
         </div>
+    </div>
+    <div class="container">
         <div class="row" id="jumbo">
-            <div class="col-md-offset-1 col-md-10 searchJumbo">Search Jumbotron</div>
+            <div class="col-md-offset-1 col-md-10 searchJumbo">
+                    <form id="search-formj">
+                            <label for="search-input">Search a City, State</label>
+                            <input type="text" id="city-input">                      
+                            <!-- This button will trigger our AJAX call -->
+                            <input id="find-city" type="submit" value="Search">
+                          </form>
+            </div>
         </div>
     </div>
     
