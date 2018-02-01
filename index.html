@@ -1,3 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kevin's Mystical & Magical Travel Guide</title>
+
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row" id="topBar">
+            <div class="col-md-4 logo">LOGO</div>
+            <div class="col-md-offset-1 col-md-3 cityButtons">Dynamically Added Buttons HERE</div>
+            <div class="col-md-offset-1 col-md-3 searchBar">
+                    <form id="search-form">
+                            <label for="search-input">Search a City, State</label>
+                            <input type="text" id="city-input"><br>
+                      
+                            <!-- This button will trigger our AJAX call -->
+                            <input id="find-city" type="submit" value="Search">
+                          </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" id="jumbo">
+            <div class="col-md-offset-1 col-md-10 searchJumbo">
+                    <form id="search-formj">
+                            <label for="search-input">Search a City, State</label>
+                            <input type="text" id="city-input">                      
+                            <!-- This button will trigger our AJAX call -->
+                            <input id="find-city" type="submit" value="Search">
+                          </form>
+            </div>
+        </div>
+    </div>
+  
 <div id="weather">
         <div class="row">
             <div class="col-md-6 cityName"></div>
@@ -22,3 +66,144 @@
             </div>
         </div>
     </div>
+<!-- food container div -->
+
+<div class="food_container">
+    <div class="row">
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info genre_btn" value="$">$</button>
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info genre_btn" value="$$">$$</button>
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info genre_btn" value="$$$">$$$</button>
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info genre_btn" value="$$$$">$$$$</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div id="list">
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div id="option_info">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- monument div -->
+
+<div class="monument_container">
+    <div class="row">
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info genre_btn" value="Parks">Parks</button>
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info genre_btn" value="Landmarks">Landmarks</button>
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info genre_btn" value="Museums">Museums</button>
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info genre_btn" value="Theaters">Theaters</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div id="list">
+    
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div id="option_info">
+    
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- news div -->
+
+<div class="news_container">
+    <div class="row">
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info genre_btn" value="Transportation">Transportation</button>
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info genre_btn" value="Hotels">Hotels</button>
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info genre_btn" value="News">News</button>
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info genre_btn" value="Map">Maps</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div id="list">
+    
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div id="option_info">
+    
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- concert container div -->
+
+<div class="concert_container">
+    <div class="row">
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info genre_btn" value="Jazz">Jazz</button>
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info genre_btn" value="Rock/Pop">Rock/Pop</button>
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info genre_btn" value="Electronic">Electronic</button>
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info genre_btn" value="Local">Local</button>
+        </div>
+        </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div id="list">
+    
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div id="option_info">
+    
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SOME SCRIPT EXAMPLES FOR ICONS -->
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+
+<i class="fas fa-utensils"></i>
+
+<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+
+
+</body>
+
+</html>
