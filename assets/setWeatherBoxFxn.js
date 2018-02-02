@@ -20,8 +20,8 @@ var setWeatherBox = function (lowerCity) {
         method: "GET"
     }).then(function (response) {
         $(".cityName").html(response.current_observation.display_location.full);
-        $(".tempF").html(response.current_observation.temp_f);
-        $(".weathCondition").html(response.current_observation.weather);
+        $(".tempF").html(response.current_observation.temp_f + "&#176");
+        $(".weathCondition").html("<img src=" + response.current_observation.icon_url + ">");
     });
 
 
@@ -32,7 +32,7 @@ var setWeatherBox = function (lowerCity) {
     }).then(function (response) {
         var webIMG = response.photos[0].image.web;
         var mobileIMG = response.photos[0].image.web;
-        $(".cityPic").html("<img src=" + webIMG + " width='900' height='306'>");
+        $(".cityPic").html("<img src=" + webIMG + " width='1200' height='306'>");
 
 
     });
