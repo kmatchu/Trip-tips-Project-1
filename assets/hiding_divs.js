@@ -3,6 +3,8 @@ var hideDivs = function(){
     $(".monument_container").hide();
     $(".news_container").hide();
     $(".concert_container").hide();
+    $("#weather").hide();
+
     console.log("hide");
 }
 
