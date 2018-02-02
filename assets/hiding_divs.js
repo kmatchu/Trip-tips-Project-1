@@ -8,6 +8,10 @@ var hideDivs = function(){
     console.log("hide");
 }
 
+var hideJumbo = function(){
+    $("#jumbo"). hide();
+}
+
 var foodDivHider = function(){
     if($(".monument_container").show()){
         $(".monument_container").hide();

@@ -40,16 +40,15 @@
 }
 
 
-/* .food_container, .monument_container, .news_container, .concert_container{
-    visibility: hidden;
+.food_container, .monument_container, .news_container, .concert_container{
+    margin-top: 25px;
 
-} */
+} 
 
 #searchJumbo {
     margin-top: 100px;
     margin-left: 500px;
     
-
 }
 
 
@@ -69,6 +68,15 @@ span.glyphicon-music{
 span.glyphicon-tree-conifer{
     font-size: 40px;
     padding: 10px;
+}
+
+#weather{
+    margin-top: 25px;
+}
+
+
+.info_row{
+    margin-top: 15px;
 }
 
 
