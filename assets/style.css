@@ -21,19 +21,22 @@
     background-color: #e7e7e7; color: black;
    
 }
-
-.headerButtons{
-    
+#search-form {
+    margin-top: 40px;
 }
 
-.searchBar{
+.searchBar {
+    
 
 }
 
 #jumbo{
     box-sizing: border-box;
     height: 200px;
-    width: 100%;
+    background-image: url(search-background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    
 }
 
 
@@ -44,7 +47,8 @@
 
 #searchJumbo {
     margin-top: 100px;
-    margin-left: 300px;
+    margin-left: 500px;
+    
 
 }
 
