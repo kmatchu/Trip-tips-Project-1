@@ -6,6 +6,7 @@ $("#find-city").on("click", function(event) {
     var lowerCity = city.toLowerCase();
     setWeatherBox(lowerCity);
     renderButtons(lowerCity);
+    hideJumbo();
 
 });
 
@@ -16,6 +17,7 @@ $("#find-cityj").on("click", function(event) {
     var lowerCity = city.toLowerCase();
     setWeatherBox(lowerCity);
     renderButtons(lowerCity);
+    hideJumbo();
 });
 
 $(document).on("click", ".headerButtons", function(){
