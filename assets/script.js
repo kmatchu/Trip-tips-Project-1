@@ -1,4 +1,3 @@
-
 $("#find-city").on("click", function(event) {
     event.preventDefault();
     var city = $("#city-input").val();
@@ -18,29 +17,28 @@ $("#find-cityj").on("click", function(event) {
     renderButtons(lowerCity);
 });
 
-
-
-$(".food_container").hide();
-$(".monument_container").hide();
-$(".news_container").hide();
-$(".concert_container").hide();
+hideDivs();
 
 $("#food_icon").on("click", function(event) {
+    foodDivHider();
     console.log("food");
     $(".food_container").toggle();
 });
 
 $("#transport_icon").on("click", function(event) {
+    transportDivHider();
     console.log("transportation");
     $(".news_container").toggle();
 });
 
 $("#concerts_icon").on("click", function(event) {
+    concertDivHider();
     console.log("music");
     $(".concert_container").toggle();
 });
 
 $("#landmark_icon").on("click", function(event) {
+    landmarkDivHider();
     console.log("landmark");
     $(".monument_container").toggle();
 });
