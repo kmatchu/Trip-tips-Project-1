@@ -3,14 +3,23 @@
     border-image-width: 5px;
     border-color: blueviolet;
     margin-top: 10px;
-    background-color: aquamarine;
+    background-color: rgb(181, 183, 182);
 }
-.logo{
+#logoIMG{
+    height: 100px;
+
 
 }
-
-.cityButtons{
-
+#buttonHead {
+    font-size: 15pt;
+    text-align: left;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.headerButtons{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 8px;
+    background-color: #e7e7e7; color: black;
+   
 }
 
 .headerButtons{
