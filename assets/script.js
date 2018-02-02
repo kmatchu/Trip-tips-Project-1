@@ -1,18 +1,21 @@
-$("#search-form").on("click", function(event) {
+
+$("#find-city").on("click", function(event) {
     event.preventDefault();
     var city = $("#city-input").val();
-
+    
     var lowerCity = city.toLowerCase();
     setWeatherBox(lowerCity);
+    renderButtons(lowerCity);
 
 });
 
-$("#search-formj").on("click", function(event) {
+$("#find-cityj").on("click", function(event) {
     event.preventDefault();
 
     var city = $("#city-inputj").val();
     var lowerCity = city.toLowerCase();
     setWeatherBox(lowerCity);
+    renderButtons(lowerCity);
 });
 
 hideDivs();

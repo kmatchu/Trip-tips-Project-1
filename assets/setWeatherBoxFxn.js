@@ -1,5 +1,14 @@
+var renderButtons = function(val) {
+    var obj = $("<button>").text(val);
+    obj.addClass("headerButtons");
+    $(".cityButtons").append(obj);
+    $(".headerButtons").on("click", console.log(val));//on-click runs on call instead of on-click
+    event.preventDefault();
+}
+
 var setWeatherBox = function (lowerCity) {
-    arrayCity = lowerCity.split(",");
+    console.log("hey");
+    var arrayCity = lowerCity.split(",");
     var cityName = arrayCity[0];
     var stateAbrv = arrayCity[1].trim();
 
