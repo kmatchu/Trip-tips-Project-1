@@ -18,6 +18,11 @@ $("#find-cityj").on("click", function(event) {
     renderButtons(lowerCity);
 });
 
+$(document).on("click", ".headerButtons", function(){
+    console.log($(this).text());
+    setWeatherBox($(this).text());
+});
+
 hideDivs();
 
 $("#food_icon").on("click", function(event) {
