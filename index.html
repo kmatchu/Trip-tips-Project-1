@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Kevin's Mystical & Magical Travel Guide</title>
+    <title>CJ's Travel</title>
 
     <link rel="stylesheet" type="text/css" href="assets/style.css">
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
@@ -16,12 +16,17 @@
 <body>
     <div class="container-fluid">
         <div class="row" id="topBar">
-            <div class="col-md-4 logo">LOGO</div>
-            <div class="col-md-offset-1 col-md-3 cityButtons"></div>
-            <div class="col-md-offset-1 col-md-3 searchBar">
+            <div class="col-md-2 logo">
+                <img id="logoIMG" src="assets/logo.jpg"/>
+            </div>
+            <div class="col-md-6">
+                <p id="buttonHead">Favorite Cities:</p>
+                <div class="cityButtons"></div>
+            </div>
+            <div class="col-md-4 searchBar">
                     <form id="search-form">
                             <label for="search-input">Search a City, State</label>
-                            <input type="text" id="city-input"><br>
+                            <input type="text" id="city-input">
                       
                             <!-- This button will trigger our AJAX call -->
                             <input id="find-city" type="submit" value="Search">

@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4521c88f26f084a546292221d5a1afa6bf6c5d63
 $("#find-city").on("click", function(event) {
     event.preventDefault();
     var city = $("#city-input").val();
