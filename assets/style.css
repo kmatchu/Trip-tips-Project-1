@@ -19,6 +19,7 @@
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 8px;
     background-color: #e7e7e7; color: black;
+    text-transform: capitalize;
    
 }
 #search-form {
@@ -51,7 +52,14 @@
     
 }
 
+.cityName {
+    font-size: 20pt;
+    margin-left: 10px;
+}
 
+.tempF {
+    font-size: 20pt;
+}
 
 span.glyphicon-cutlery{
     font-size: 40px;
