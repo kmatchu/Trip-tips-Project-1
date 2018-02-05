@@ -11,6 +11,7 @@ var renderButtons = function (val) {
 }
 
 var setWeatherBox = function (lowerCity) {
+    
     console.log("hey");
     var arrayCity = lowerCity.split(",");
     cityName = arrayCity[0];
@@ -46,6 +47,7 @@ var setWeatherBox = function (lowerCity) {
 
 
     });
+    $("#weather").fadeIn();
 
 }
 
