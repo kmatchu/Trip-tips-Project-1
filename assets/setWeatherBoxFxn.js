@@ -1,5 +1,6 @@
 var cityName;
 var currentLoca;
+var currentLoca2;
 
 var renderButtons = function (val) {
     var obj = $("<button>").text(val);
@@ -26,6 +27,7 @@ var setWeatherBox = function (lowerCity) {
         var currentLat = response.current_observation.display_location.latitude;
         var currentLong = response.current_observation.display_location.longitude;
         currentLoca = currentLat + "/" + currentLong;
+        currentLoca2 = currentLat + "," + currentLong;
         $(".cityName").html(response.current_observation.display_location.full);
         $(".tempF").html(response.current_observation.temp_f + "&#176");
         $(".weathCondition").html("<img src=" + response.current_observation.icon_url + ">");
@@ -92,3 +94,5 @@ $(".music").on("click", function () {
         });
     });
 });
+
+
