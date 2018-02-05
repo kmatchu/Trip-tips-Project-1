@@ -8,8 +8,15 @@ var hideDivs = function(){
     console.log("hide");
 }
 
+var hideSearch = function(){
+    $(".food_container").hide();
+    $(".monument_container").hide();
+    $(".news_container").hide();
+    $(".concert_container").hide();
+}
+
 var hideJumbo = function(){
-    $("#jumbo"). hide();
+    $("#jumbo").hide();
 }
 
 var foodDivHider = function(){
