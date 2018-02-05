@@ -47,7 +47,7 @@ var setWeatherBox = function (lowerCity) {
 
 
     });
-    $("#weather").fadeIn();
+    
 
 }
 

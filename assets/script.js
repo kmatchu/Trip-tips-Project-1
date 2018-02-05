@@ -2,10 +2,10 @@ var city= 0;
 
 $("#find-city").on("click", function(event) {
     event.preventDefault();
-
+    weatherDivHider();
     city = $("#city-input").val();
     console.log(city);
-    $("#weather").show();
+    
     
     var lowerCity = city.toLowerCase();
     setWeatherBox(lowerCity);
@@ -17,7 +17,7 @@ $("#find-city").on("click", function(event) {
 $("#find-cityj").on("click", function(event) {
     event.preventDefault();
 
-    $("#weather").show();
+    weatherDivHider();
     city = $("#city-inputj").val();
 
     var lowerCity = city.toLowerCase();
@@ -29,7 +29,9 @@ $("#find-cityj").on("click", function(event) {
 
 $(document).on("click", ".headerButtons", function(){
     console.log($(this).text());
+    
     setWeatherBox($(this).text());
+    weatherDivHider();
     hideSearch();
 });
 
