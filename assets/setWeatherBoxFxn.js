@@ -81,7 +81,7 @@ $(".music").on("click", function () {
             $("#optionC" + i).text(response._embedded.events[i]._embedded.attractions[0].name);
         };
 
-        $(".musOption").on("click", function () {
+        $(".optionT").on("click", function () {
 
             var currentVal = $(this).val();
             console.log(currentVal);

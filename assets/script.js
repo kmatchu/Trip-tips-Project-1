@@ -1,6 +1,9 @@
+var city= 0;
+
 $("#find-city").on("click", function(event) {
     event.preventDefault();
-    var city = $("#city-input").val();
+    city = $("#city-input").val();
+    console.log(city);
     $("#weather").show();
     
     var lowerCity = city.toLowerCase();
@@ -13,7 +16,7 @@ $("#find-city").on("click", function(event) {
 $("#find-cityj").on("click", function(event) {
     event.preventDefault();
     $("#weather").show();
-    var city = $("#city-inputj").val();
+    city = $("#city-inputj").val();
     var lowerCity = city.toLowerCase();
     setWeatherBox(lowerCity);
     renderButtons(lowerCity);
