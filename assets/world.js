@@ -43,8 +43,8 @@ $(".hotels").on("click", function () {
                 var currentVal = $(this).val();
                 var website = response.results[currentVal].name;
                 console.log(response.results[currentVal].name);
-                var formatWebsite = website.replace(/ /g, "+");
-                console.log(formatWebsite);
+               
+                console.log(formatWebsite); var formatWebsite = website.replace(/ /g, "+");
                 // console.log(currentVal);
                 // console.log(response._embedded.events[currentVal].name);
                 // var htmlToAdd = "<ul><li>" + response.results[currentVal].name + "</li><li> <a href= https://www.google.com/maps/search/" + response.results[currentVal].name + " target='_blank'>Website</a></li></ul>"
@@ -53,3 +53,43 @@ $(".hotels").on("click", function () {
             });
 });
 });
+$(".maps").on("click", function () {
+    console.log("Maps working");
+    console.log(city);
+    var mapCity = city.replace(/ /g, "+");
+    var googleMap = "https://maps.googleapis.com/maps/api/staticmap?center=" + mapCity + "&zoom=13&size=600x300&maptype=roadmap&key=AIzaSyA5S3HY_HcD1tcwYlCjWqC0HpZCkGs0_HM";
+    console.log(googleMap);    
+            var htmlToAdd = "<img src=" + googleMap + " alt=city map /><a href=" + googleMap + "target='_blank'></a>";
+                $("#currentTravel").html(htmlToAdd);
+            });
+
+            $(".news").on("click", function () {
+                console.log("News working");
+                var nytLink = "https://api.nytimes.com/svc/search/v2/articlesearch.json?apikey=9bea106de39c43339a278e2b55fad5ef&q=" + cityName;
+                console.log(nytLink);    
+                $.ajax({
+                    url: nytLink,
+                    method: "GET"
+                }).then(function (response) {
+                    for (var i = 0; i < 4; i++){
+                        console.log(response);
+                        $("#optionT"+i).text(response.response.docs[i].headline.main);
+                    };
+                            
+                            $(".optionT").on("click", function () {
+                            var currentVal = $(this).val();
+                            console.log(response.response.docs[currentVal].snippet);
+                            console.log(currentVal);
+                            
+                            
+                            var headline = response.response.docs[currentVal].headline.main;
+                            var brief = response.response.docs[currentVal].snippet;
+                            var newsURL = response.response.docs[currentVal].web_url;
+                            
+                            var htmlToAdd = "<ul><li> <a href =" + newsURL + " target = '_blank'>" + headline + "</a></li>" + "<li>" + brief + "</li></ul>"; 
+                            
+                            
+                            $("#currentTravel").html(htmlToAdd);
+                        });
+            });
+            });

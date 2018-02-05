@@ -1,6 +1,12 @@
+var city= 0;
+
 $("#find-city").on("click", function(event) {
     event.preventDefault();
-    var city = $("#city-input").val();
+
+    city = $("#city-input").val();
+    console.log(city);
+    $("#weather").show();
+    
     var lowerCity = city.toLowerCase();
     setWeatherBox(lowerCity);
     renderButtons(lowerCity);
@@ -10,7 +16,10 @@ $("#find-city").on("click", function(event) {
 
 $("#find-cityj").on("click", function(event) {
     event.preventDefault();
-    var city = $("#city-inputj").val();
+
+    $("#weather").show();
+    city = $("#city-inputj").val();
+
     var lowerCity = city.toLowerCase();
     setWeatherBox(lowerCity);
     renderButtons(lowerCity);
