@@ -76,5 +76,17 @@ var landmarkDivHider = function(){
     }
 }
 
+var EmptyDivs = function(){
+    $(".musOption").html("");
+    $(".optionT").html("");
+    $(".optionM").html("");
+    $(".optionF").html("");
+    $("#currentMonument").html("");
+    $("#currentTravel").html("");
+    $("#currentMusic").html("");
+    $("#currentFood").html("");
+
+}
+
 
 
