@@ -18,7 +18,7 @@
     <div class="container-fluid">
         <div class="row" id="topBar">
             <div class="col-md-3 logo">
-                <img id="logoIMG" src="assets/logo2.png"/>
+                <img id="logoIMG" src="assets/logo3.png"/>
             </div>
             <div class="col-md-5">
                 <p id="buttonHead">Favorite Cities:</p>
@@ -35,21 +35,18 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid" id="jumbo">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="jumbotron" id="searchJumbo">
-                    <h1 class="display-4">Welcome to CJ's Travels!</h1>
-                    <hr class="my-4">
-                    <form id="search-formj">
-                            <label for="search-input">Search a City, State</label>
-                            <input type="text" id="city-inputj">                      
+    <div class="container-fluid">
+        <div class="row" id="jumbo">
+            <div class="col-md-12" id="searchJumbo">
+                <form id="search-formj">
+                    <label for="search-input">Search a City, State</label>
+                        <input type="text" id="city-inputj">                      
                             <!-- This button will trigger our AJAX call -->
-                            <input id="find-cityj" type="submit" value="Search">
+                        <input id="find-cityj" type="submit" value="Search">
                     </form>
-                </div>
             </div>
         </div>
+    </div>
     </div>
 
 
@@ -215,8 +212,8 @@
             <div class="col-md-4 weathCondition"></div>
         </div>
         <div class="row">
-            <div class="col-md-10 cityPic"></div>
-            <div class="col-md-2">
+            <div class="col-md-8 cityPic"></div>
+            <div class="col-md-offset-1 col-md-2">
                 <div class="row icon">
                     <button type="button" class="btn btn-default">
                         <span class='glyphicon glyphicon-globe' id="transport_icon"></span>
