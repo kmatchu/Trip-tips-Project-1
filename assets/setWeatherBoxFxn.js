@@ -6,7 +6,7 @@ var renderButtons = function (val) {
     var obj = $("<button>").text(val);
     obj.addClass("headerButtons");
     $(".cityButtons").append(obj);
-    
+    $(".headerButtons").on("click", console.log(val));//on-click runs on call instead of on-click
     event.preventDefault();
 }
 
@@ -37,7 +37,6 @@ var setWeatherBox = function (lowerCity) {
     });
 
 
-
     //must be lower case
     $.ajax({
         url: cityPicAPI,
@@ -49,6 +48,8 @@ var setWeatherBox = function (lowerCity) {
 
 
     });
+    $("#weather").fadeIn();
+
     
 
 }
