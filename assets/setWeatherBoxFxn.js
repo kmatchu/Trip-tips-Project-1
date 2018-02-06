@@ -1,5 +1,8 @@
 var cityName;
 var currentLoca;
+
+var displayArray = [];
+
 var currentLoca2;
 
 var renderButtons = function (val) {
@@ -11,8 +14,10 @@ var renderButtons = function (val) {
 }
 
 var setWeatherBox = function (lowerCity) {
+
     
     console.log("hey");
+
     var arrayCity = lowerCity.split(",");
     cityName = arrayCity[0];
     var stateAbrv = arrayCity[1].trim();
@@ -20,8 +25,10 @@ var setWeatherBox = function (lowerCity) {
     var cityImgSearchStr = cityName.replace(/ /g, "-");
 
     var weatherAPI = "http://api.wunderground.com/api/9b91158e94439d41/conditions/q/" + stateAbrv + "/" + cityName + ".json";
+
     console.log(weatherAPI);
     var cityPicAPI = "https://api.teleport.org/api/urban_areas/slug:" + cityImgSearchStr + "/images/";
+
 
     $.ajax({
         url: weatherAPI,
@@ -44,6 +51,7 @@ var setWeatherBox = function (lowerCity) {
     }).then(function (response) {
         var webIMG = response.photos[0].image.web;
         var mobileIMG = response.photos[0].image.web;
+
         $(".cityPic").html("<img src=" + webIMG + " width='100%' height='306'>");
 
 
@@ -52,28 +60,36 @@ var setWeatherBox = function (lowerCity) {
 
     
 
+
 }
 
 $(".food").on("click", function () {
     var genre = $(this).val();
     var foodAPI = 'https://nu-yelp-api.herokuapp.com/api/all/' + currentLoca + '/' + genre + '/9219';
     console.log(foodAPI);
+
     $.ajax({
         url: foodAPI,
         method: "GET"
     }).then(function (response) {
         var obj = JSON.parse(response);
-        for(i=0;i<4;i++){
+
+        for(i=0;i<8;i++){
         $("#optionF" + i ).text(obj.businesses[i].name);
         };
         $(".optionF").on("click", function(){
+            if(displayArray.length === 3){ alert("Please clear a box") }
+            else{
             var currentFoodVal = $(this).val();
-            console.log(currentFoodVal);
-            var foodHTMLToAdd = "<ul><li>" +obj.businesses[currentFoodVal].name + "</li><li>" + obj.businesses[currentFoodVal].categories[0].title +"</li><li><a href=" + obj.businesses[currentFoodVal].url + ">Yelp Link</a></li><li>" + obj.businesses[currentFoodVal].display_phone + "</li></ul>";
-            $("#currentFood").html(foodHTMLToAdd);
-
-        });
+            // var index = displayArray.length;
+            var foodHTMLToAdd = "<div class='col-md-3 currentOptions'><button class='x'>X</button><ul><li>" +obj.businesses[currentFoodVal].name + "</li><li>" + obj.businesses[currentFoodVal].categories[0].title +"</li><li><a href=" + obj.businesses[currentFoodVal].url + ">Yelp Link</a></li><li>" + obj.businesses[currentFoodVal].display_phone + "</li></ul></div>";
+            displayArray.push(foodHTMLToAdd);
+            render();
+        };
     });
+            
+    });
+
     });
 
 $(".music").on("click", function () {
@@ -94,10 +110,24 @@ $(".music").on("click", function () {
             console.log(currentVal);
             console.log(response._embedded.events[currentVal].name);
             var htmlToAdd = "<ul><li>" + response._embedded.events[currentVal].name + "</li><li>" + response._embedded.events[currentVal]._embedded.venues[0].name + ", " + response._embedded.events[currentVal].dates.start.localDate + "</li><li><a href=" + response._embedded.events[currentVal].url + ">Purchase Tickets</a></li></ul>"
-
             $("#currentMusic").html(htmlToAdd);
         });
     });
 });
 
+
+
+var render = function(){
+    $(".currentOptions").remove();
+    for(var i=0;i<displayArray.length;i++){
+       $($.parseHTML(displayArray[i])).children("button").data("index",i);
+        $(".appendHere").append(displayArray[i]);
+    }
+};
+
+$(document).on("click",".x", function(){
+    current = $(this).data("index");
+    displayArray.splice(current,1);
+    render();          
+}); 
 
