@@ -47,8 +47,17 @@
 
 } 
 
-#searchJumbo {
-    margin-top: 100px;
+#tagLine {
+    margin-left: 530px;
+    margin-top: 30px;
+    font-size: 24pt;
+    color: purple;
+    font-family: 'Homemade Apple', cursive;
+    /* font-family: 'Fredericka the Great', cursive; */
+}
+
+#search-formj {
+    margin-top: 30px;
     margin-left: 550px;
     
 }
