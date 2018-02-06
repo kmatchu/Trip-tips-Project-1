@@ -24,11 +24,9 @@
     margin-left: 5px;
    
 }
-/* #search-form {
-    float: right;
-    margin-top: 45px;
+#search-form {
     
-} */
+}
 #search-input{
 
 }
@@ -127,28 +125,30 @@ span.glyphicon-search{
 }
 
 
-.btn-default {
+/* .btn-default {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 8px;
-}
+} */
 
 
-.genre_btn{
+button {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 8px;
     background-color: white; color: black;
 }
 
-.optionT {
+/* .optionT {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 8px;
     background-color: white; color: black;
 }
-.btn-group-justified {
+
+.optionM {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 8px;
     background-color: white; color: black;
 }
+
 
 html, body {
     margin: 0; padding: 0;
