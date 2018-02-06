@@ -20,12 +20,19 @@
     border-radius: 8px;
     background-color: white; color: black;
     text-transform: capitalize;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-left: 5px;
    
 }
 #search-form {
-    margin-top: 40px;
+    float: right;
+    margin-top: 50px;
+    
 }
+#search-input{
 
+}
 .searchBar {
     
 
@@ -97,12 +104,34 @@ span.glyphicon-tree-conifer{
     margin-top: 15px;
 }
 
+
+.navbar{
+    height: 100px;
+}
+
+.cityButtons{
+    list-style: none;
+}
+
+
 .btn-default {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 8px;
 }
 
-.btn-info{
+
+.genre_btn{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 8px;
+    background-color: white; color: black;
+}
+
+.optionT {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 8px;
+    background-color: white; color: black;
+}
+.btn-group-justified {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 8px;
     background-color: white; color: black;

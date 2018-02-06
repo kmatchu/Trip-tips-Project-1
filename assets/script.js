@@ -14,6 +14,7 @@ $("#find-city").on("click", function(event) {
     weatherDivHider();
     hideJumbo();
     hideSearch();
+    EmptyDivs();
 });
 
 $("#find-cityj").on("click", function(event) {
@@ -29,6 +30,7 @@ $("#find-cityj").on("click", function(event) {
     weatherDivHider();
     hideJumbo();
     hideSearch();
+    EmptyDivs();
 });
 
 $(document).on("click", ".headerButtons", function(){
@@ -37,6 +39,8 @@ $(document).on("click", ".headerButtons", function(){
     setWeatherBox($(this).text());
     weatherDivHider();
     hideSearch();
+    EmptyDivs();
+    
 });
 
 hideDivs();
