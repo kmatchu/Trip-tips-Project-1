@@ -44,7 +44,7 @@ var setWeatherBox = function (lowerCity) {
     }).then(function (response) {
         var webIMG = response.photos[0].image.web;
         var mobileIMG = response.photos[0].image.web;
-        $(".cityPic").html("<img src=" + webIMG + " width='1200' height='306'>");
+        $(".cityPic").html("<img src=" + webIMG + " width='100%' height='306'>");
 
 
     });
