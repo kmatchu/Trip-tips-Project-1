@@ -20,12 +20,19 @@
     border-radius: 8px;
     background-color: #e7e7e7; color: black;
     text-transform: capitalize;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-left: 5px;
    
 }
 #search-form {
-    margin-top: 40px;
+    float: right;
+    margin-top: 50px;
+    
 }
+#search-input{
 
+}
 .searchBar {
     
 
@@ -85,6 +92,14 @@ span.glyphicon-tree-conifer{
 
 .info_row{
     margin-top: 15px;
+}
+
+.navbar{
+    height: 100px;
+}
+
+.cityButtons{
+    list-style: none;
 }
 
 
