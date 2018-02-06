@@ -7,8 +7,9 @@
     <link rel="stylesheet" type="text/css" href="assets/style.css">
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script> -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <style>
         .options {
@@ -33,28 +34,29 @@
 </head>
 
 <body>
-
     
-    <div class="container-fluid" id="topBar">
-        <nav class="navbar sticky-top">
-            <a class="navbar-brand" href="#">
+    <div class="container-fluid-nav text-center" id="topBar">
+        <nav class="navbar navbar-expand-lg">
+            <a class="brand" href="#">
                 <img id="logoIMG" src="assets/logo3.png" class="d-inline-block align-top" alt="">       
             </a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 cityButtons">
-                <li class='nav-item active navbarList'></li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0" id="search-form">
-                <span class="navbar-text" id="search-input">Search a City, State: </span>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav cityButtons">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Searched Cities <span class="caret"></span></a>
+                        <ul class="dropdown-menu navbarList">
+                        </ul>
+                    </li>
+                </ul>
+            <form class="form-inline my-2 my-lg-0 navbar-right" id="search-form">
+                <span class='glyphicon glyphicon-search' id="search_icon"></span>
                 <input class="form-control mr-sm-2" type="search" placeholder="City Name, State" aria-label="Search" id="city-input">
                       
                 <!-- This button will trigger our AJAX call -->
                 <button id="find-city" type="submit" value="Search">Search</button>
             </form>
-
-            </div>
+        </div>
         </nav>
-        
     </div>
     <div class="container-fluid">
         <div class="row" id="jumbo">
@@ -323,14 +325,12 @@
     </div>
 
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/hiding_divs.js"></script>
-    <script src="assets/script.js"></script>
-    <!-- <script src="assets/dynamicButton.js"></script> -->
-    <script src="assets/setWeatherBoxFxn.js"></script>
-
+    
+<script type="text/javascript" src="assets/hiding_divs.js"></script>
+<script src="assets/script.js"></script>
+<!-- <script src="assets/dynamicButton.js"></script> -->
+<script src="assets/setWeatherBoxFxn.js"></script>
 <script type="text/javascript" src="assets/monumentAJAX.js"></script>
-
 <script src="assets/world.js"></script>
 
 

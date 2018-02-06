@@ -4,11 +4,10 @@
     border-color: blueviolet;
     margin-top: 10px;
     background-color: rgb(253, 255, 254);
+    margin-bottom: 20px;
 }
 #logoIMG{
-    height: 100px;
-
-
+    height: 75px;
 }
 #buttonHead {
     font-size: 15pt;
@@ -25,11 +24,11 @@
     margin-left: 5px;
    
 }
-#search-form {
+/* #search-form {
     float: right;
-    margin-top: 50px;
+    margin-top: 45px;
     
-}
+} */
 #search-input{
 
 }
@@ -95,6 +94,11 @@ span.glyphicon-tree-conifer{
     padding: 10px;
 }
 
+span.glyphicon-search{
+    font-size: 25px;
+}
+
+
 #weather{
     margin-top: 25px;
 }
@@ -106,11 +110,20 @@ span.glyphicon-tree-conifer{
 
 
 .navbar{
-    height: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+   
+}
+.brand{
+    float: left;
+    height: 75px;
+    font-size: 18px;
+    line-height: 20px;
 }
 
-.cityButtons{
+.navbar-nav{
     list-style: none;
+    margin-top: 10px;
 }
 
 
