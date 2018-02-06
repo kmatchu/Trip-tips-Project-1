@@ -19,6 +19,15 @@ var hideJumbo = function(){
     $("#jumbo").hide();
 }
 
+var weatherDivHider = function(){
+    if($("#weather").hide()){
+        $("#weather").fadeIn("slow");
+    }
+    else if($("#weather").show()){
+        $("#weather").fadeOut("slow")
+    }
+}
+
 var foodDivHider = function(){
     if($(".monument_container").show()){
         $(".monument_container").hide();

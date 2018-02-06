@@ -1,12 +1,8 @@
-<<<<<<< HEAD
-var renderButtons = function(val) {
-=======
 var cityName;
 var currentLoca;
 var currentLoca2;
 
 var renderButtons = function (val) {
->>>>>>> ac8e278a98a0b2821ae2f411806a12df8a4cc032
     var obj = $("<button>").text(val);
     obj.addClass("headerButtons");
     $(".cityButtons").append(obj);
@@ -18,7 +14,7 @@ var setWeatherBox = function (lowerCity) {
     
     console.log("hey");
     var arrayCity = lowerCity.split(",");
-    var cityName = arrayCity[0];
+    cityName = arrayCity[0];
     var stateAbrv = arrayCity[1].trim();
 
     var weatherAPI = "http://api.wunderground.com/api/9b91158e94439d41/conditions/q/" + stateAbrv + "/" + cityName + ".json";
@@ -28,13 +24,10 @@ var setWeatherBox = function (lowerCity) {
         url: weatherAPI,
         method: "GET"
     }).then(function (response) {
-<<<<<<< HEAD
-=======
         var currentLat = response.current_observation.display_location.latitude;
         var currentLong = response.current_observation.display_location.longitude;
         currentLoca = currentLat + "/" + currentLong;
         currentLoca2 = currentLat + "," + currentLong;
->>>>>>> ac8e278a98a0b2821ae2f411806a12df8a4cc032
         $(".cityName").html(response.current_observation.display_location.full);
         $(".tempF").html(response.current_observation.temp_f + "&#176");
         $(".weathCondition").html("<img src=" + response.current_observation.icon_url + ">");
@@ -52,10 +45,9 @@ var setWeatherBox = function (lowerCity) {
 
 
     });
-<<<<<<< HEAD
-}
-=======
     $("#weather").fadeIn();
+
+    
 
 }
 
@@ -106,4 +98,3 @@ $(".music").on("click", function () {
 });
 
 
->>>>>>> ac8e278a98a0b2821ae2f411806a12df8a4cc032
