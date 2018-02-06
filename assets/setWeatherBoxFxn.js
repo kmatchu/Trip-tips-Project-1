@@ -6,9 +6,12 @@ var displayArray = [];
 var currentLoca2;
 
 var renderButtons = function (val) {
-    var obj = $("<a class='nav-link' href='#'>").text(val);
+    var obj = $("<li><a class='nav-link' href='#'>").text(val);
+    var divider = $("<li role='separator' class='divider'>")
     obj.addClass("headerButtons");
     $(".navbarList").append(obj);
+    $(".navbarList").append(divider);
+
     $(".headerButtons").on("click", console.log(val));//on-click runs on call instead of on-click
     event.preventDefault();
 }
