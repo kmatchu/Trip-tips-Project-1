@@ -3,7 +3,7 @@
     border-image-width: 5px;
     border-color: blueviolet;
     margin-top: 10px;
-    background-color: rgb(181, 183, 182);
+    background-color: rgb(253, 255, 254);
 }
 #logoIMG{
     height: 100px;
@@ -18,7 +18,7 @@
 .headerButtons{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 8px;
-    background-color: #e7e7e7; color: black;
+    background-color: white; color: black;
     text-transform: capitalize;
    
 }
@@ -33,10 +33,11 @@
 
 #jumbo{
     box-sizing: border-box;
-    height: 200px;
-    background-image: url(search-background.jpg);
+    height: 300px;
+    background-image: url(billboard.png);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 50%;
+    background-position: center;
     
 }
 
@@ -48,7 +49,7 @@
 
 #searchJumbo {
     margin-top: 100px;
-    margin-left: 500px;
+    margin-left: 550px;
     
 }
 
@@ -87,4 +88,13 @@ span.glyphicon-tree-conifer{
     margin-top: 15px;
 }
 
+.btn-default {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 8px;
+}
 
+.btn-info{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 8px;
+    background-color: white; color: black;
+}

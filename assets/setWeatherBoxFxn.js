@@ -1,22 +1,34 @@
 var cityName;
 var currentLoca;
+
 var displayArray = [];
+
+var currentLoca2;
 
 var renderButtons = function (val) {
     var obj = $("<button>").text(val);
     obj.addClass("headerButtons");
     $(".cityButtons").append(obj);
-    
+    $(".headerButtons").on("click", console.log(val));//on-click runs on call instead of on-click
     event.preventDefault();
 }
 
 var setWeatherBox = function (lowerCity) {
+
+    
+    console.log("hey");
+
     var arrayCity = lowerCity.split(",");
     cityName = arrayCity[0];
     var stateAbrv = arrayCity[1].trim();
 
+    var cityImgSearchStr = cityName.replace(/ /g, "-");
+
     var weatherAPI = "http://api.wunderground.com/api/9b91158e94439d41/conditions/q/" + stateAbrv + "/" + cityName + ".json";
-    var cityPicAPI = "https://api.teleport.org/api/urban_areas/slug:" + cityName + "/images/";
+
+    console.log(weatherAPI);
+    var cityPicAPI = "https://api.teleport.org/api/urban_areas/slug:" + cityImgSearchStr + "/images/";
+
 
     $.ajax({
         url: weatherAPI,
@@ -25,11 +37,11 @@ var setWeatherBox = function (lowerCity) {
         var currentLat = response.current_observation.display_location.latitude;
         var currentLong = response.current_observation.display_location.longitude;
         currentLoca = currentLat + "/" + currentLong;
+        currentLoca2 = currentLat + "," + currentLong;
         $(".cityName").html(response.current_observation.display_location.full);
         $(".tempF").html(response.current_observation.temp_f + "&#176");
         $(".weathCondition").html("<img src=" + response.current_observation.icon_url + ">");
     });
-
 
 
     //must be lower case
@@ -39,8 +51,16 @@ var setWeatherBox = function (lowerCity) {
     }).then(function (response) {
         var webIMG = response.photos[0].image.web;
         var mobileIMG = response.photos[0].image.web;
-        $(".cityPic").html("<img src=" + webIMG + " width='1200' height='306'>");
+
+        $(".cityPic").html("<img src=" + webIMG + " width='100%' height='306'>");
+
+
     });
+    $("#weather").fadeIn();
+
+    
+
+
 }
 
 $(".food").on("click", function () {
@@ -96,6 +116,7 @@ $(".music").on("click", function () {
 });
 
 
+
 var render = function(){
     $(".currentOptions").remove();
     for(var i=0;i<displayArray.length;i++){
@@ -109,3 +130,4 @@ $(document).on("click",".x", function(){
     displayArray.splice(current,1);
     render();          
 }); 
+

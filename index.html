@@ -9,6 +9,7 @@
         crossorigin="anonymous"></script> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
+
     <style>
         .options {
             height: 140px;
@@ -25,15 +26,19 @@
     </style>
 
 
+    
+    
+
+
 </head>
 
 <body>
     <div class="container-fluid">
         <div class="row" id="topBar">
-            <div class="col-md-2 logo">
-                <img id="logoIMG" src="assets/logo.jpg" />
+            <div class="col-md-3 logo">
+                <img id="logoIMG" src="assets/logo3.png"/>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <p id="buttonHead">Favorite Cities:</p>
                 <div class="cityButtons"></div>
             </div>
@@ -50,17 +55,16 @@
     </div>
     <div class="container-fluid">
         <div class="row" id="jumbo">
-            <div class="col-md-12 searchJumbo">
-                <div id="searchJumbo">
-                    <form id="search-formj">
-                        <label for="search-input">Search a City, State</label>
-                        <input type="text" id="city-inputj">
-                        <!-- This button will trigger our AJAX call -->
+            <div class="col-md-12" id="searchJumbo">
+                <form id="search-formj">
+                    <label for="search-input">Search a City, State</label>
+                        <input type="text" id="city-inputj">                      
+                            <!-- This button will trigger our AJAX call -->
                         <input id="find-cityj" type="submit" value="Search">
                     </form>
-                </div>
             </div>
         </div>
+    </div>
     </div>
 
 
@@ -146,16 +150,16 @@
     <div class="monument_container">
         <div class="row">
             <div class="col-md-3">
-                <button type="button" class="btn btn-info genre_btn monnument" value="Parks">Parks</button>
+                <button type="button" class="btn btn-info genre_btn monument" value="park">Parks</button>
             </div>
             <div class="col-md-3">
-                <button type="button" class="btn btn-info genre_btn monument" value="Landmarks">Landmarks</button>
+                <button type="button" class="btn btn-info genre_btn monument" value="shopping">Shopping</button>
             </div>
             <div class="col-md-3">
-                <button type="button" class="btn btn-info genre_btn monument" value="Museums">Museums</button>
+                <button type="button" class="btn btn-info genre_btn monument" value="museum">Museums</button>
             </div>
             <div class="col-md-3">
-                <button type="button" class="btn btn-info genre_btn monument" value="Theaters">Theaters</button>
+                <button type="button" class="btn btn-info genre_btn monument" value="movie_theater">Theaters</button>
             </div>
         </div>
         <div class="row info_row">
@@ -192,16 +196,16 @@
     <div class="news_container">
         <div class="row">
             <div class="col-md-3">
-                <button type="button" class="btn btn-info genre_btn travel" value="Transportation">Transportation</button>
+                <button type="button" class="btn btn-info genre_btn travel transpo" value="Transportation">Transportation</button>
             </div>
             <div class="col-md-3">
-                <button type="button" class="btn btn-info genre_btn travel" value="Hotels">Hotels</button>
+                <button type="button" class="btn btn-info genre_btn travel hotels" value="Hotels">Hotels</button>
             </div>
             <div class="col-md-3">
-                <button type="button" class="btn btn-info genre_btn travel" value="News">News</button>
+                <button type="button" class="btn btn-info genre_btn travel news" value="News">News</button>
             </div>
             <div class="col-md-3">
-                <button type="button" class="btn btn-info genre_btn travel" value="Map">Maps</button>
+                <button type="button" class="btn btn-info genre_btn travel maps" value="Map">Maps</button>
             </div>
         </div>
         <div class="row info_row">
@@ -288,8 +292,8 @@
             <div class="col-md-4 weathCondition"></div>
         </div>
         <div class="row">
-            <div class="col-md-10 cityPic"></div>
-            <div class="col-md-2">
+            <div class="col-md-8 cityPic"></div>
+            <div class="col-md-offset-1 col-md-2">
                 <div class="row icon">
                     <button type="button" class="btn btn-default">
                         <span class='glyphicon glyphicon-globe' id="transport_icon"></span>
@@ -321,6 +325,9 @@
     <!-- <script src="assets/dynamicButton.js"></script> -->
     <script src="assets/setWeatherBoxFxn.js"></script>
 
+<script type="text/javascript" src="assets/monumentAJAX.js"></script>
+
+<script src="assets/world.js"></script>
 
 
 </body>
