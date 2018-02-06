@@ -85,7 +85,6 @@ var EmptyDivs = function(){
     $("#currentTravel").html("");
     $("#currentMusic").html("");
     $("#currentFood").html("");
-
 }
 
 

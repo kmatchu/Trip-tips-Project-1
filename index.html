@@ -33,25 +33,28 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row" id="topBar">
-            <div class="col-md-3 logo">
-                <img id="logoIMG" src="assets/logo3.png"/>
-            </div>
-            <div class="col-md-5">
-                <p id="buttonHead">Favorite Cities:</p>
-                <div class="cityButtons"></div>
-            </div>
-            <div class="col-md-4 searchBar">
-                <form id="search-form">
-                    <label for="search-input">Search a City, State</label>
-                    <input type="text" id="city-input">
 
-                    <!-- This button will trigger our AJAX call -->
-                    <input id="find-city" type="submit" value="Search">
-                </form>
+    
+    <div class="container-fluid" id="topBar">
+        <nav class="navbar sticky-top">
+            <a class="navbar-brand" href="#">
+                <img id="logoIMG" src="assets/logo3.png" class="d-inline-block align-top" alt="">       
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 cityButtons">
+                <li class='nav-item active navbarList'></li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" id="search-form">
+                <span class="navbar-text" id="search-input">Search a City, State: </span>
+                <input class="form-control mr-sm-2" type="search" placeholder="City Name, State" aria-label="Search" id="city-input">
+                      
+                <!-- This button will trigger our AJAX call -->
+                <button id="find-city" type="submit" value="Search">Search</button>
+            </form>
+
             </div>
-        </div>
+        </nav>
+        
     </div>
     <div class="container-fluid">
         <div class="row" id="jumbo">
