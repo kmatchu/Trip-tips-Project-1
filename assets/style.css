@@ -24,11 +24,9 @@
     margin-left: 5px;
    
 }
-/* #search-form {
-    float: right;
-    margin-top: 45px;
+#search-form {
     
-} */
+}
 #search-input{
 
 }
@@ -127,25 +125,32 @@ span.glyphicon-search{
 }
 
 
-.btn-default {
+/* .btn-default {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 8px;
+} */
+
+
+button {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 8px;
+    background-color: white; color: black;
 }
 
-
-.genre_btn{
+/* .optionT {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 8px;
     background-color: white; color: black;
 }
 
-.optionT {
+.optionM {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 8px;
     background-color: white; color: black;
 }
+
 .btn-group-justified {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 8px;
     background-color: white; color: black;
-}
+} */
