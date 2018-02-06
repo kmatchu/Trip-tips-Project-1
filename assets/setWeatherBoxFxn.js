@@ -17,8 +17,11 @@ var setWeatherBox = function (lowerCity) {
     cityName = arrayCity[0];
     var stateAbrv = arrayCity[1].trim();
 
+    var cityImgSearchStr = cityName.replace(/ /g, "-");
+
     var weatherAPI = "http://api.wunderground.com/api/9b91158e94439d41/conditions/q/" + stateAbrv + "/" + cityName + ".json";
-    var cityPicAPI = "https://api.teleport.org/api/urban_areas/slug:" + cityName + "/images/";
+    console.log(weatherAPI);
+    var cityPicAPI = "https://api.teleport.org/api/urban_areas/slug:" + cityImgSearchStr + "/images/";
 
     $.ajax({
         url: weatherAPI,

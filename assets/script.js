@@ -2,14 +2,16 @@ var city= 0;
 
 $("#find-city").on("click", function(event) {
     event.preventDefault();
-    weatherDivHider();
+    
     city = $("#city-input").val();
     console.log(city);
     
     
     var lowerCity = city.toLowerCase();
+    // var cityString = lowerCity.replace(/ /g, "-");
     setWeatherBox(lowerCity);
     renderButtons(lowerCity);
+    weatherDivHider();
     hideJumbo();
     hideSearch();
 });
@@ -17,12 +19,14 @@ $("#find-city").on("click", function(event) {
 $("#find-cityj").on("click", function(event) {
     event.preventDefault();
 
-    weatherDivHider();
+    
     city = $("#city-inputj").val();
 
     var lowerCity = city.toLowerCase();
+    // var cityString = lowerCity.replace(/ /g, "-");
     setWeatherBox(lowerCity);
     renderButtons(lowerCity);
+    weatherDivHider();
     hideJumbo();
     hideSearch();
 });
