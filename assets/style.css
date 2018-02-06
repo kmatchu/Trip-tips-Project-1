@@ -95,10 +95,27 @@ span.glyphicon-tree-conifer{
     margin-top: 15px;
 }
 
+<<<<<<< HEAD
+=======
+
+.navbar{
+    height: 100px;
+}
+
+.cityButtons{
+    list-style: none;
+}
+
+
+>>>>>>> 4dc5dce2ed031625e934800b93bc511a466d262b
 .btn-default {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 8px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4dc5dce2ed031625e934800b93bc511a466d262b
 
 .btn-info{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
