@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="Trip-tips-Project-1/assets/style.css">
+<style>
+    .optionButtons {
+        height: 140px;
+        overflow: scroll;
+    }
+
+    .x {
+        position: absolute;
+        top: 0;
+        right: 15px;
+        height: 26px;
+        width: 26px;
+    }
+</style>
+</head>
+<body>
+    <div class="container-fluid" id="topBar">
+        <nav class="navbar sticky-top">
+            <img id="logoIMG" src="Trip-tips-Project-1/assets/logo3.png" class="d-inline-block align-top navbar-brand" alt="Logo">
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 cityButtons"><li class='nav-item active navbarList'></li></ul>
+            <form class="form-inline my-2 my-lg-0" id="search-form">
+                <span class="navbar-text" id="search-input">Search a City, State: </span>
+                <input class="form-control mr-sm-2" type="search" placeholder="City Name, State" aria-label="Search" id="city-input">
+                <button id="find-city" type="button" value="Search">Search</button>
+            </form>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row" id="jumbo">
+            <div class="col-md-12" id="searchJumbo">
+            <form id="search-formj">
+                <label for="search-input">Search a City, State</label>
+                <input type="text" id="city-inputj">
+                <input id="find-cityj" type="button" value="Search">
+            </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="information">
+        <div class="row genreAppend">
+            <div class="col-md-3">
+                <div class="btn-group-justified">
+                    <div class="btn-group"><button type="button" class="btn btn-primary btn-info genre_btn buttonG1"></button></div>
+                    <div class="btn-group"><button type="button" class="btn btn-primary btn-info genre_btn buttonG2"></button></div>
+                    <div class="btn-group"><button type="button" class="btn btn-primary btn-info genre_btn buttonG3"></button></div>
+                    <div class="btn-group"><button type="button" class="btn btn-primary btn-info genre_btn buttonG4"></button></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row appendHere">
+            <div class="col-md-3 optionButtons">
+                <div class="btn-group-vertical buttonAppendHere"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="weather">
+        <div class="row">
+            <div class="col-md-5 cityName"></div>
+            <div class="col-md-2 tempF"></div>
+            <div class="col-md-4 weathCondition"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 cityPic"></div>
+            <div class="col-md-offset-1 col-md-2">
+                <div class="row icon">
+                    <button type="button" class="btn btn-default">
+                    <span class='glyphicon glyphicon-globe' id="travel_icon"></span>
+                    </button>
+                </div>
+                <div class="row icon">
+                    <button type="button" class="btn btn-default"><span class='glyphicon glyphicon-cutlery' id="food_icon"></span></button>
+                </div>
+                <div class="row icon">
+                    <button type="button" class="btn btn-default"><span class='glyphicon glyphicon-music' id="concerts_icon"></span></button>
+                </div>
+                <div class="row icon">
+                    <button type="button" class="btn btn-default"><span class='glyphicon glyphicon-tree-conifer' id="landmark_icon"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+var currentLoca = "";
+var currentLoca = "";
+var cityName = "";
+var displayArray = [];
+
+$(document).on("click", "#find-city", function(){
+    var search = $("#city-input").val();
+    console.log(search);
+    parseName(search);
+});
+
+$(document).on("click", "#find-cityj", function(){
+    var search = $("#city-inputj").val();
+    console.log(search);
+    parseName(search);
+});
+
+$(document).on("click",".headerButtons",function(){
+    var buttonVal = $(this).text();
+    parseName(buttonVal);
+});
+
+var parseName = function(inputCity){
+    
+    var fullCity = inputCity;
+    var arrayCity = fullCity.toLowerCase().split(",");
+    cityName = arrayCity[0].trim().replace(/ /g, "-");
+    var stateAbrv = arrayCity[1].trim();
+
+    setWeatherBox(cityName,stateAbrv);
+    // renderButtons(fullCity);
+    // hideJumbo();
+    // hideSearch();
+    // EmptyDivs();
+} ;
+
+var renderButtons = function (thisCity) {
+    var obj = $("<a class='nav-link headerButtons' href='#'>").text(thisCity);
+    $(".navbarList").append(obj);
+};
+
+var setWeatherBox = function (name,state) {
+    var weatherURL = "http://api.wunderground.com/api/9b91158e94439d41/conditions/q/" + state + "/" + name + ".json";
+    var cityPicURL = "https://api.teleport.org/api/urban_areas/slug:" + name + "/images/";
+    if($("#weather").show()){   $("#weather").fadeOut("slow")   };
+    $.ajax({
+        url: weatherURL,
+        method: "GET"
+    }).then(function (response) {
+        currentLoca = response.current_observation.display_location.latitude + "/" + response.current_observation.display_location.longitude;
+        currentLoca2 = response.current_observation.display_location.latitude + "," + response.current_observation.display_location.longitude;
+        $(".cityName").html(response.current_observation.display_location.full);
+        $(".tempF").html(response.current_observation.temp_f + "&#176");
+        $(".weathCondition").html("<img src=" + response.current_observation.icon_url + ">");    });
+
+    $.ajax({
+        url: cityPicURL,
+        method: "GET"
+    }).then(function (response) {
+        var webIMG = response.photos[0].image.web;
+        var mobileIMG = response.photos[0].image.web;
+        $(".cityPic").html("<img src=" + webIMG + " width='100%' height='306'>");   });
+
+    
+    $("#weather").fadeIn();
+};
+
+
+
+
+$(document).on("click", "#food_icon", function () {
+    if($(".information").show()){   $(".information").fadeOut("slow")   };
+    $(".buttonG1").val(1).text("$");
+    $(".buttonG2").val(2).text("$$");
+    $(".buttonG3").val(3).text("$$$");
+    $(".buttonG4").val(4).text("$$$$");
+    $(".information").fadeIn();
+});
+
+$(document).on("click", "#travel_icon", function () {
+    if($(".information").show()){   $(".information").fadeOut("slow")   };
+    $(".buttonG1").val(cityName).text("Map");
+    $(".buttonG2").val("transportation+station+in+" + cityName).text("Transport");
+    $(".buttonG3").val("hotel+" + cityName).text("Hotels");
+    $(".buttonG4").val(cityName).text("News");
+    $(".information").fadeIn();
+});
+
+$(document).on("click", "#concerts_icon", function () {
+    if($(".information").show()){   $(".information").fadeOut("slow")   };
+    $(".buttonG1").val("Rock").text("Rock");
+    $(".buttonG2").val("Country").text("Country");
+    $(".buttonG3").val("Musical").text("Musical");
+    $(".buttonG4").val("Sports").text("Sports");
+    $(".information").fadeIn();
+});
+
+$(document).on("click", "#landmark_icon", function () {
+    if($(".information").show()){   $(".information").fadeOut("slow")   };
+    $(".buttonG1").val("shopping_mall|shoe_store|supermarket|clothing_store|department_store").text("Shopping Spots");
+    $(".buttonG2").val("museum|art_gallery|aquarium").text("Museums");
+    $(".buttonG3").val("park").text("Parks");
+    $(".buttonG4").val("movie_theater").text("Theaters");
+    $(".information").fadeIn();
+});
+
+$(document).on("click", ".genre_btn", function () {
+            var genre = $(this).val();
+            var text = $(this).text();
+            displayArray = [];
+            $(".currentOptions").remove();
+            if ($.inArray(genre, ["1", "2", "3", "4"]) >= 0) {
+                foodRender(genre);  }
+
+            else if (genre === "transportation+station+in+"+cityName) {
+                stationsRender(genre);    }
+            
+            else if (genre === "hotel+"+cityName){
+                hotelRender(genre);     }
+            
+            else if (genre === cityName && text === "Map"){
+                mapRender(genre);      }
+
+            else if (genre === cityName && text === "News"){
+                newsRender(genre);     }
+            
+
+            else if ($.inArray(genre, ["shopping_mall|shoe_store|supermarket|clothing_store|department_store", "museum|art_gallery|aquarium", "park", "movie_theater"]) >= 0) {
+                attractionRender(genre);    }
+
+            else if ($.inArray(genre, ["Rock", "Country", "Musical", "Sports"]) >= 0) {
+                concertRender(genre);   }
+});
+
+var foodRender = function(thisGenre){
+    var foodURL = 'https://nu-yelp-api.herokuapp.com/api/all/' + currentLoca + '/' + thisGenre + '/9219';
+                $.ajax({
+                    url: foodURL,
+                    method: "GET"
+                }).then(function (response) {
+                    var obj = JSON.parse(response);
+                    var thisHTML = "";
+                    for (i = 0; i < 8; i++) {
+                        thisHTML += "<div class='btn-group-justified'><div class='btn-group'><button class='optionButtonFood btn btn-primary' value = " + i + ">" + obj.businesses[i].name + "</button></div></div>";
+                        };
+                    $(".buttonAppendHere").html(thisHTML)
+                    $(".optionButtonFood").on("click", function () {
+                        if (displayArray.length === 3) { alert("Please clear a box") }
+                        else {
+                            var currentFoodVal = $(this).val();
+                            var foodHTMLToAdd = "<div class='col-md-3 currentOptions'><button class='x'>X</button><ul><li>" + obj.businesses[currentFoodVal].name + "</li><li>" + obj.businesses[currentFoodVal].categories[0].title + "</li><li><a href=" + obj.businesses[currentFoodVal].url + ">Yelp Link</a></li><li>" + obj.businesses[currentFoodVal].display_phone + "</li></ul></div>";
+                            displayArray.push(foodHTMLToAdd);
+                            render();
+                        };
+                    });
+
+                });
+};
+
+var concertRender = function(thisGenre){
+    var concertsURL = "https://app.ticketmaster.com/discovery/v2/events.json?city=" + cityName + "&classificationName=" + thisGenre + "&apikey=4gaxV68thViYmaadixAGKQwTkcdccIg0";
+        $.ajax({
+            url: concertsURL,
+            method: "GET"
+            }).then(function (response) {
+                var thisHTML = "";
+                for (i = 0; i < 8; i++) {
+                    thisHTML += "<div class='btn-group-justified'><div class='btn-group'><button class='optionButtonFood btn btn-primary' value = " + i + ">" + response._embedded.events[i]._embedded.attractions[0].name + "</button></div></div>";
+                    $(".buttonAppendHere").html(thisHTML)
+                    };
+
+        $(".optionButtonFood").on("click", function () {
+            if(displayArray.length === 3){ alert("Please clear a box")}
+            else{
+            var currentVal = $(this).val();
+            var concertHTMLToAdd = "<div class='col-md-3 currentOptions'><button class='x'>X</button><ul><li>" + response._embedded.events[currentVal].name + "</li><li>" + response._embedded.events[currentVal]._embedded.venues[0].name + ", " + response._embedded.events[currentVal].dates.start.localDate + "</li><li><a href=" + response._embedded.events[currentVal].url + ">Purchase Tickets</a></li></ul></div>";
+            // Can this be made global?
+            displayArray.push(concertHTMLToAdd);
+            render();   
+            };
+        });
+    });
+};
+
+var stationsRender = function(location){
+    var stationsURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=transportation+station+in+" + location + "&key=AIzaSyA5S3HY_HcD1tcwYlCjWqC0HpZCkGs0_HM";
+    $.ajax({
+        url: stationsURL,
+        method: "GET"
+        }).then(function (response) {
+            var thisHTML = "";
+            for (i = 0; i < 8; i++) {
+                thisHTML += "<div class='btn-group-justified'><div class='btn-group'><button class='optionButtonStation btn btn-primary' value = " + i + ">" + response.results[i].name + "</button></div></div>";
+                $(".buttonAppendHere").html(thisHTML)
+                };
+    
+    $(".optionButtonStation").on("click", function () {
+            if(displayArray.length === 1){ alert("Please clear the box")}
+            else{
+                var currentVal = $(this).val();
+                var htmlToAdd = "<div class='col-md-9 currentOptions'><button class='x'>X</button><ul><li>" + response.results[currentVal].name + "</li><li>" +response.results[currentVal].formatted_address +"</li><li> <a href= https://www.google.com/maps/search/" + response.results[currentVal].name + " target='_blank'>Website</a></li></ul></div>"
+                displayArray.push(htmlToAdd);
+                render();   
+                };
+            });
+        });
+};
+
+var hotelRender = function(location){
+    var hotelURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=hotel+" + location + "&key=AIzaSyA5S3HY_HcD1tcwYlCjWqC0HpZCkGs0_HM";
+    $.ajax({
+        url: hotelURL,
+        method: "GET"
+        }).then(function (response) {
+            var thisHTML = "";
+            for (i = 0; i < 8; i++) {
+                thisHTML += "<div class='btn-group-justified'><div class='btn-group'><button class='optionButtonHotel btn btn-primary' value = " + i + ">" + response.results[i].name + "</button></div></div>";
+                $(".buttonAppendHere").html(thisHTML);
+                };
+    
+    $(".optionButtonHotel").on("click", function () {
+            if(displayArray.length === 1){ alert("Please clear the box")}
+            else{
+                var currentVal = $(this).val();
+                var htmlToAdd = "<div class='col-md-9 currentOptions'><button class='x'>X</button><ul><li>" + response.results[currentVal].name + "</li><li>" +response.results[currentVal].formatted_address +"</li><li> <a href= https://www.google.com/maps/search/" + response.results[currentVal].name + " target='_blank'>Website</a></li></ul></div>"
+                displayArray.push(htmlToAdd);
+                render();   
+            };
+        });
+    });
+};
+
+var mapRender = function(location){
+    var mapURL = "https://maps.googleapis.com/maps/api/staticmap?center=" + location + "&zoom=13&size=600x300&maptype=roadmap&key=AIzaSyA5S3HY_HcD1tcwYlCjWqC0HpZCkGs0_HM";
+    if(displayArray.length === 1){ alert("Please clear the box")}
+    else{
+    var htmlToAdd = "<img src=" + mapURL + " alt='citymap' /><a href=" + mapURL + " target='_blank'></a>";
+    displayArray.push(htmlToAdd);
+    render();   };
+};
+
+var newsRender = function(location){
+    var nytURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?apikey=9bea106de39c43339a278e2b55fad5ef&q=" + location;
+    $.ajax({
+        url: nytURL,
+        method: "GET"
+        }).then(function (response) {
+        var thisHTML = "";
+        for (i = 0; i < 8; i++) {
+            thisHTML += "<div class='btn-group-justified'><div class='btn-group'><button class='optionButtonNews btn btn-primary' value = " + i + ">" + response.response.docs[i].headline.main + "</button></div></div>";
+            $(".buttonAppendHere").html(thisHTML);
+        };
+
+                $(".optionButtonNews").on("click", function () {
+                if(displayArray.length === 1){ alert("Please clear the box")}
+                else{
+                var currentVal = $(this).val();
+                var htmlToAdd = "<div class='col-md-9 currentOptions'><button class='x'>X</button><ul><li> <a href =" + response.response.docs[currentVal].web_url + " target = '_blank'>" + response.response.docs[currentVal].headline.main + "</a></li>" + "<li>" + response.response.docs[currentVal].snippet + "</li></ul></div>"; 
+                displayArray.push(htmlToAdd);
+                render();
+                }
+            });
+        });
+    };
+
+    var attractionRender = function(types){
+    var attractURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + currentLoca2 + "&radius=10000&rankby=prominence&types=" + types + "&key=AIzaSyB-OVCwzm7e1cFAFr9n5HEmLTPySWZSoto";
+    $.ajax({
+        url: attractURL,
+        method: "GET"
+    }).then(function (response) {
+        var thisHTML = "";
+        for (i = 0; i < 8; i++) {
+            thisHTML += "<div class='btn-group-justified'><div class='btn-group'><button class='optionButtonAttract btn btn-primary' value = " + i + ">" + response.results[i].name + "</button></div></div>";
+            $(".buttonAppendHere").html(thisHTML);
+        };
+
+        $(".optionButtonAttract").on("click", function () {
+            if(displayArray.length === 1){ alert("Please clear the box")}
+                else{
+            var currentVal = $(this).val();
+            var htmlToAdd = "<div class='col-md-9 currentOptions'><button class='x'>X</button><ul><li>" + response.results[currentVal].name + "</li><li>" + response.results[currentVal].vicinity + "</li><li><a target=_blank href=https://www.google.com/maps/place/" + response.results[currentVal].vicinity.replace(/ /g, "+") + ">Google Map Location</a></li></ul>";
+                displayArray.push(htmlToAdd);
+                render();
+        };
+    });
+});
+};
+
+
+var render = function(){
+    $(".currentOptions").remove();
+    for(var i=0;i<displayArray.length;i++){
+       $($.parseHTML(displayArray[i])).children("button").data("index",i);
+        $(".appendHere").append(displayArray[i]);
+    }
+};
+
+
+
+$(document).on("click",".x", function(){
+    current = $(this).data("index");
+    displayArray.splice(current,1);
+    render();          
+}); 
+
+</script>
+</body>
+</html>
