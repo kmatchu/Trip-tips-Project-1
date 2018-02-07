@@ -76,6 +76,7 @@ $(".food").on("click", function () {
         method: "GET"
     }).then(function (response) {
         var obj = JSON.parse(response);
+        console.log(obj);
 
         for(i=0;i<8;i++){
         $("#optionF" + i ).text(obj.businesses[i].name);
@@ -85,7 +86,8 @@ $(".food").on("click", function () {
             else{
             var currentFoodVal = $(this).val();
             // var index = displayArray.length;
-            var foodHTMLToAdd = "<div class='col-md-3 currentOptions'><button class='x'>X</button><ul><li>" +obj.businesses[currentFoodVal].name + "</li><li>" + obj.businesses[currentFoodVal].categories[0].title +"</li><li><a href=" + obj.businesses[currentFoodVal].url + ">Yelp Link</a></li><li>" + obj.businesses[currentFoodVal].display_phone + "</li></ul></div>";
+            // var foodHTMLToAdd = "<div class='col-md-3 currentOptions'><button class='x'>X</button><ul><li>" + obj.businesses[currentFoodVal].name + "</li><li>" + obj.businesses[currentFoodVal].categories[0].title +"</li><li><a href=" + obj.businesses[currentFoodVal].url + ">Yelp Link</a></li><li>" + obj.businesses[currentFoodVal].display_phone + "</li></ul></div>";
+            var foodHTMLToAdd = "<div class='thumbnail foodThumb'><img src=" + obj.businesses[currentFoodVal].image_url + " alt="+ obj.businesses[currentFoodVal].name + " width= 100% /><div class='caption'><p id='restName'>" + obj.businesses[currentFoodVal].name + "</p><p id='restCat'>" + obj.businesses[currentFoodVal].categories[0].title + "</p><p>" + obj.businesses[currentFoodVal].display_phone +"</p><p><a href='" + obj.businesses[currentFoodVal].url + "' target='_blank' class='btn btn-primary' role='button'>Yelp Link</a><a href='#' class= 'btn btn-primary x' role='button'>X</a></p></div></div>";
             displayArray.push(foodHTMLToAdd);
             render();
         };

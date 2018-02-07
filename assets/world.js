@@ -41,9 +41,10 @@ $(".hotels").on("click", function () {
                 var website = response.results[currentVal].name;
                 console.log(response.results[currentVal].name);
                
-                console.log(formatWebsite); var formatWebsite = website.replace(/ /g, "+");
-               
+                var formatWebsite = website.replace(/ /g, "+");
+                console.log(formatWebsite); 
                 var htmlToAdd = "<ul><li>" + response.results[currentVal].name + "</li><li>" +response.results[currentVal].formatted_address +"</li><li> <a href= https://www.google.com/maps/search/" + formatWebsite + " target='_blank'>Website</a></li></ul>"
+                
                 $("#currentTravel").html(htmlToAdd);
             });
 });
@@ -80,9 +81,11 @@ $(".maps").on("click", function () {
                             var headline = response.response.docs[currentVal].headline.main;
                             var brief = response.response.docs[currentVal].snippet;
                             var newsURL = response.response.docs[currentVal].web_url;
+                            var photo = "https://static01.nyt.com/" + response.response.docs[currentVal].multimedia[0].url;
                             
-                            var htmlToAdd = "<ul><li> <a href =" + newsURL + " target = '_blank'>" + headline + "</a></li>" + "<li>" + brief + "</li></ul>"; 
                             
+                            var htmlToAdd = "<div class='thumbnail'><img src=" + photo + " alt="+ headline + " height= 100px /><div class='caption'><h3 id='headline'>" + headline + "</h3><p id='brief'>" + brief + "</p><p><a href='" + newsURL + "' target='_blank' class='btn btn-primary' role='button'>Read More</a></p></div></div>";
+                            console.log(photo);
                             
                             $("#currentTravel").html(htmlToAdd);
                         });

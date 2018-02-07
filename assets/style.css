@@ -33,7 +33,6 @@
 
 }
 .searchBar {
-    
 
 }
 
@@ -161,22 +160,68 @@ span.glyphicon-search{
     padding-left: 20px;
 }
 
+ul {
+    list-style-type:none;
+    
+}
+
+li {
+    list-style-type:none;
+}
 .navbar-nav{
     list-style: none;
 }
 
+#headline {
+    text-align: center;
+}
 
-/* .btn-default {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    border-radius: 8px;
-} */
+#brief {
+    font-size: 11pt;
+    color: grey;
+}
 
+.thumbnail {
+    /* width: 600px; */
+    border-color: blueviolet;
+    align-content: center;
+}
+
+.foodThumb {
+    width: 200px;
+    float: left; 
+}
+
+
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
+    height: 200px; 
+}
 
 button {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 8px;
     background-color: white; color: black;
 }
+
+.btn-group {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 8px;
+    background-color: white; color: black;
+}
+
+.btn-group-justified {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 8px;
+    background-color: white; color: black;
+}
+
+.btn-primary { 
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 8px;
+    background-color: white; color: black;
+    border-color: blueviolet;
+}
+
  .optionT {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 8px;
