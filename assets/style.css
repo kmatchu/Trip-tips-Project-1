@@ -2,9 +2,8 @@
     height: 100px;
     border-image-width: 5px;
     border-color: blueviolet;
-    margin-top: 10px;
     background-color: rgb(253, 255, 254);
-    margin-bottom: 20px;
+    padding-top:10px;
 }
 #logoIMG{
     height: 75px;
@@ -25,6 +24,9 @@
    
 }
 #search-form {
+    float: right;
+    padding-top: 18px;
+    padding-right: 15px;
     
 }
 #search-input{
@@ -37,12 +39,21 @@
 
 #jumbo{
     box-sizing: border-box;
-    height: 500px;
-    background-image: url(billboard.png);
+    /* padding-top: 500px; */
+    height: 100%;
+    width: 100%;
+    /* background-image: url(billboard.png);
     background-repeat: no-repeat;
     background-size: 50%;
-    background-position: bottom;
+    background-position: bottom; */
     
+}
+
+#billboard{
+    width: 100%;
+    bottom: 93px;
+    position: fixed;
+    text-align: center;
 }
 
 
@@ -52,18 +63,29 @@
 } 
 
 #tagLine {
-    margin-left: 530px;
-    margin-top: 230px;
-    font-size: 24pt;
+    font-size: 30px;
+    position: absolute;
     color: purple;
     font-family: 'Homemade Apple', cursive;
-    /* font-family: 'Fredericka the Great', cursive; */
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%)
 }
 
 #search-formj {
-    margin-top: 30px;
-    margin-left: 550px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+#searchJumbo{
     
+}
+
+.cityButtons{
+    padding-top: 12px;
 }
 
 .cityName {
@@ -94,11 +116,26 @@ span.glyphicon-tree-conifer{
 
 span.glyphicon-search{
     font-size: 25px;
+    top: 8px;
 }
 
 
+#weather_container{
+    height: 610px;
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
 #weather{
-    margin-top: 25px;
+    padding-left: 200px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background: plum;
+}
+
+#weather_box{
+    color: #f0ecf3;
 }
 
 
@@ -107,9 +144,13 @@ span.glyphicon-search{
 }
 
 
-.navbar{
-    padding-top: 20px;
-    padding-bottom: 20px;
+#navcontainer{
+    height: 100px;
+    border-image-width: 5px;
+    border-color: blueviolet;
+    background-color: #eeeeee;
+    padding-top:10px;
+    border-bottom-width: 1.5px;
    
 }
 .brand{
@@ -117,11 +158,11 @@ span.glyphicon-search{
     height: 75px;
     font-size: 18px;
     line-height: 20px;
+    padding-left: 20px;
 }
 
 .navbar-nav{
     list-style: none;
-    margin-top: 10px;
 }
 
 
@@ -160,4 +201,34 @@ html, body {
 @-webkit-keyframes slide {
     from { background-position: 0 0; }
     to { background-position: -400px 0; }
+}
+
+#navabarCitiesDropdown>li>a:focus, #navabarCitiesDropdown>li>a:hover{
+    color: purple;
+    background-color: #72008656;
+}
+
+#navabarCitiesDropdown{
+    color: purple;
+}
+
+#navabarCitiesDropdown:hover, #navabarCitiesDropdown:focus{
+    background-color: #17acda56;
+}
+
+.footer{
+    /* background: linear-gradient(to bottom right, purple, plum); */
+    background: rgb(114, 0, 114);
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    height: 93px;
+    bottom: 0px;
+    position: fixed;
+}
+
+#footer_text{
+    
+    margin-top: 30px;
+    color: #eeeeee
 }
