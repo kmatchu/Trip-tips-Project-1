@@ -114,7 +114,8 @@ $(".music").on("click", function () {
             var currentVal = $(this).val();
             console.log(currentVal);
             console.log(response._embedded.events[currentVal].name);
-            var htmlToAdd = "<ul><li>" + response._embedded.events[currentVal].name + "</li><li>" + response._embedded.events[currentVal]._embedded.venues[0].name + ", " + response._embedded.events[currentVal].dates.start.localDate + "</li><li><a href=" + response._embedded.events[currentVal].url + ">Purchase Tickets</a></li></ul>"
+            // var htmlToAdd = "<ul><li>" + response._embedded.events[currentVal].name + "</li><li>" + response._embedded.events[currentVal]._embedded.venues[0].name + ", " + response._embedded.events[currentVal].dates.start.localDate + "</li><li><a href=" + response._embedded.events[currentVal].url + ">Purchase Tickets</a></li></ul>"
+            var htmlToAdd = "<div class='thumbnail'><img src=" + response._embedded.events[currentVal].images[0].url + " alt="+ response._embedded.events[currentVal].name + " height= 100px /><div class='caption'><h3 id='venue'>" + response._embedded.events[currentVal]._embedded.venues[0].name + "</h3><p id='date'>" + response._embedded.events[currentVal].dates.start.localDate + "</p><p><a href='" + response._embedded.events[currentVal].url + "' target='_blank' class='btn btn-primary' role='button'>Purchase Tickets</a></p></div></div>";
             $("#currentMusic").html(htmlToAdd);
         });
     });
