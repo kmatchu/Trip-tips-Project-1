@@ -234,6 +234,13 @@ button {
     background-color: white; color: black;
 }
 
+#venue {
+    text-align: center;
+}
+
+#date {
+    text-align: center;
+}
 
 html, body {
     margin: 0; padding: 0;
