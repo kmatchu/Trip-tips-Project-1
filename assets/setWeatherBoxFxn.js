@@ -59,7 +59,7 @@ var setWeatherBox = function (lowerCity) {
 
 
     });
-    $("#weather").fadeIn();
+    $("#weather_container").fadeIn();
 
     
 

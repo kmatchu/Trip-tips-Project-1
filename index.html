@@ -18,22 +18,22 @@
     </style>
 </head>
 
-<body>
+<body class="hero-bkg-animated">
     
     <div class="container-fluid-nav text-center" id="topBar">
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg navbar-fixed-top" id="navcontainer">
             <a class="brand" href="index.html">
                 <img id="logoIMG" src="assets/logo3.png" class="d-inline-block align-top" alt="">       
             </a>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav cityButtons">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Searched Cities <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="navabarCitiesDropdown">Searched Cities <span class="caret"></span></a>
                         <ul class="dropdown-menu navbarList">
                         </ul>
                     </li>
                 </ul>
-            <form class="form-inline my-2 my-lg-0 navbar-right" id="search-form">
+            <form class="form-inline my-2 my-lg-0" id="search-form">
                 <span class='glyphicon glyphicon-search' id="search_icon"></span>
                 <input class="form-control mr-sm-2" type="search" placeholder="City Name, State" aria-label="Search" id="city-input">
                       
@@ -43,9 +43,11 @@
         </div>
         </nav>
     </div>
-    <div class="container-fluid hero-bkg-animated">
+    <div class="container-fluid">
         <div class="row" id="jumbo">
             <div class="col-md-12" id="searchJumbo">
+                <div id="billboard">
+                <img src='assets/billboard.png' alt="billboard_pic" width="50%">
                 <p id="tagLine">Plan Your Next Adventure!</p>
                 <form id="search-formj">
                     <label for="search-input">Search a City, State</label>
@@ -53,6 +55,7 @@
                             <!-- This button will trigger our AJAX call -->
                         <button id="find-cityj" type="submit" value="Search">Search</button>
                     </form>
+                </div>
             </div>
         </div>
     </div>
@@ -275,12 +278,12 @@
         </div>
     </div>
 
-
+    <div class="container-fluid" id="weather_container">
     <div id="weather">
         <div class="row">
-            <div class="col-md-5 cityName"></div>
-            <div class="col-md-2 tempF"></div>
-            <div class="col-md-4 weathCondition"></div>
+            <div class="col-md-5 cityName" id="weather_box"></div>
+            <div class="col-md-2 tempF" id="weather_box"></div>
+            <div class="col-md-4 weathCondition" id="weather_box"></div>
         </div>
         <div class="row">
             <div class="col-md-8 cityPic"></div>
@@ -308,6 +311,13 @@
             </div>
         </div>
     </div>
+    </div>
+
+<footer class="footer">
+    <div class="container">
+        <p id="footer_text">© 2018 Copyright: CJ's Travel</p>
+    </div>
+</footer>
 
 
     

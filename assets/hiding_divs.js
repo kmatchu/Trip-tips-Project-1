@@ -3,7 +3,7 @@ var hideDivs = function(){
     $(".monument_container").hide();
     $(".news_container").hide();
     $(".concert_container").hide();
-    $("#weather").hide();
+    $("#weather_container").hide();
 
     console.log("hide");
 }
@@ -20,11 +20,11 @@ var hideJumbo = function(){
 }
 
 var weatherDivHider = function(){
-    if($("#weather").hide()){
-        $("#weather").fadeIn("slow");
+    if($("#weather_container").hide()){
+        $("#weather_container").fadeIn("slow");
     }
-    else if($("#weather").show()){
-        $("#weather").fadeOut("slow")
+    else if($("#weather_container").show()){
+        $("#weather_container").fadeOut("slow")
     }
 }
 
