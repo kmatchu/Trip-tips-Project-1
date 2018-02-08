@@ -8,10 +8,10 @@ var currentLoca2;
 var renderButtons = function (val) {
     var obj = $("<li><a class='nav-link' href='#'>").text(val);
     var divider = $("<li role='separator' class='divider'>")
-
-    obj.addClass("navButtons");
+    obj.addClass("headerButtons");
     $(".navbarList").append(obj);
     $(".navbarList").append(divider);
+
     $(".headerButtons").on("click", console.log(val));//on-click runs on call instead of on-click
     event.preventDefault();
 }
@@ -27,7 +27,7 @@ var setWeatherBox = function (lowerCity) {
 
     var cityImgSearchStr = cityName.replace(/ /g, "-");
 
-    var weatherAPI = "http://api.wunderground.com/api/9b91158e94439d41/conditions/q/" + stateAbrv + "/" + cityName + ".json";
+    var weatherAPI = "https://api.wunderground.com/api/9b91158e94439d41/conditions/q/" + stateAbrv + "/" + cityName + ".json";
 
     console.log(weatherAPI);
     var cityPicAPI = "https://api.teleport.org/api/urban_areas/slug:" + cityImgSearchStr + "/images/";
@@ -128,7 +128,7 @@ var render = function(){
     for(var i=0;i<displayArray.length;i++){
        $($.parseHTML(displayArray[i])).children("button").data("index",i);
         $(".appendHere").append(displayArray[i]);
-    $("#city-input").val(" ");
+    
     }
 };
 
