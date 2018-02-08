@@ -80,6 +80,9 @@
 }
 a{
     color: #eeeeee;
+
+    text-transform: capitalize;
+
 }
 
 .cityName {
