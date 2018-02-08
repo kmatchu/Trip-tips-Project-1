@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="https://fonts.googleapis.com/css?family=Raleway|Rock+Salt" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css">
+
 <style>
     .buttonAppendHere {
         height: 220px;
@@ -69,14 +71,15 @@
             </div>
         </div>
 
-        <div class="row appendHere">
+        <div class="row">
             <div class="col-md-3 optionButtons">
                 <div class="btn-group-vertical buttonAppendHere"></div>
                 <div class="emptySpace"></div>
             </div>
+            <div class="appendHere"></div>
         </div>
     </div>
-
+    <div class="container-fluid" id="weather_container">
     <div id="weather">
         <div class="row">
             <div class="col-md-5 cityName"></div>
@@ -102,6 +105,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 <footer class="footer">
@@ -135,7 +139,7 @@ $(document).on("click", "#find-cityj", function(){
 });
 
 var renderButtons = function (val) {
-    var obj = $("<li class='headerButtons'><a class='nav-link' href='#'>").text(val);
+    var obj = $("<li class='navButtons'><a class='nav-link' href='#'>").text(val);
     var divider = $("<li role='separator' class='divider'>");
     $(".navbarList").append(obj);   
     $(".navbarList").append(divider);
@@ -157,14 +161,19 @@ var parseName = function(inputCity){
     setWeatherBox(cityName,stateAbrv);
     renderButtons(fullCity);
     $("#jumbo").hide();
-    // hideSearch();
-    // EmptyDivs();
+    //hideSearch();
+    //EmptyDivs();
 } ;
 
 var setWeatherBox = function (name,state) {
-    var weatherURL = "http://api.wunderground.com/api/9b91158e94439d41/conditions/q/" + state + "/" + name + ".json";
+    var weatherURL = "https://api.wunderground.com/api/9b91158e94439d41/conditions/q/" + state + "/" + name + ".json";
     var cityPicURL = "https://api.teleport.org/api/urban_areas/slug:" + name + "/images/";
-    if($("#weather").show()){   $("#weather").fadeOut("slow")   };
+    if($("#weather_container").hide()){   
+        $("#weather_container").fadeIn("slow")   
+    }
+    else if($("#weather_container").show()){
+        $("#weather_container").fadeOut("slow");
+    }
     $.ajax({
         url: weatherURL,
         method: "GET"
@@ -197,7 +206,12 @@ var reset = function(){
 
 $(document).on("click", "#food_icon", function () {
     reset();
-    if($(".information").show()){   $(".information").fadeOut("slow")   };
+    if($(".information").hide()){   
+        $(".information").fadeIn("slow")   
+    }
+    else if($(".information").show()){
+        $(".information").fadeOut("slow")
+    }
     $(".buttonG1").val(1).text("$");
     $(".buttonG2").val(2).text("$$");
     $(".buttonG3").val(3).text("$$$");
@@ -207,7 +221,12 @@ $(document).on("click", "#food_icon", function () {
 
 $(document).on("click", "#travel_icon", function () {
     reset();
-    if($(".information").show()){   $(".information").fadeOut("slow")   };
+    if($(".information").hide()){   
+        $(".information").fadeIn("slow")   
+    }
+    else if($(".information").show()){
+        $(".information").fadeOut("slow")
+    }
     $(".buttonG1").val(cityName).text("Map");
     $(".buttonG2").val("transportation+station+in+" + cityName).text("Transport");
     $(".buttonG3").val("hotel+" + cityName).text("Hotels");
@@ -217,7 +236,12 @@ $(document).on("click", "#travel_icon", function () {
 
 $(document).on("click", "#concerts_icon", function () {
     reset();
-    if($(".information").show()){   $(".information").fadeOut("slow")   };
+    if($(".information").hide()){   
+        $(".information").fadeIn("slow")   
+    }
+    else if($(".information").show()){
+        $(".information").fadeOut("slow")
+    }
     $(".buttonG1").val("Rock").text("Rock");
     $(".buttonG2").val("Country").text("Country");
     $(".buttonG3").val("Musical").text("Musical");
@@ -227,8 +251,13 @@ $(document).on("click", "#concerts_icon", function () {
 
 $(document).on("click", "#landmark_icon", function () {
     reset();
-    if($(".information").show()){   $(".information").fadeOut("slow")   };
-    $(".buttonG1").val("shopping_mall|shoe_store|supermarket|clothing_store|department_store").text("Shopping Spots");
+    if($(".information").hide()){   
+        $(".information").fadeIn("slow")   
+    }
+    else if($(".information").show()){
+        $(".information").fadeOut("slow")
+    }
+    $(".buttonG1").val("shopping_mall|shoe_store|supermarket|clothing_store|department_store").text("Shopping");
     $(".buttonG2").val("museum|art_gallery|aquarium").text("Museums");
     $(".buttonG3").val("park").text("Parks");
     $(".buttonG4").val("movie_theater").text("Theaters");
@@ -383,7 +412,7 @@ var newsRender = function(location){
         };
 
                 $(".optionButtonNews").on("click", function () {
-                if(displayArray.length === 3){ alert("Please clear the box")}
+                if(displayArray.length === 2){ alert("Please clear the box")}
                 else{
                 var currentVal = $(this).val();
                 var htmlToAdd = "<div class='col-md-3 currentOptions thumbnail'><button class='x'>X</button><img src=https://static01.nyt.com/" + response.response.docs[currentVal].multimedia[0].url + " /><ul><li><h3>" + response.response.docs[currentVal].headline.main + "</h3></li><li font-size= 11px>" + response.response.docs[currentVal].snippet + "</li><li><a href =" + response.response.docs[currentVal].web_url + " target = '_blank'>Read More</a></ul></div>"; 
@@ -422,9 +451,11 @@ var newsRender = function(location){
 var render = function(){
     $(".currentOptions").remove();
     for(var i=0;i<displayArray.length;i++){
-       $($.parseHTML(displayArray[i])).children("button").data("index",i);
+        $($.parseHTML(displayArray[i])).children("button").data("index",i);
         $(".appendHere").append(displayArray[i]);
+        
     }
+    $(".appendHere").append(displayArray[i]).hide().fadeIn("slow")
 };
 
 

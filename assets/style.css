@@ -110,11 +110,13 @@ a{
     font-size: 20pt;
     margin-left: 10px;
     font-family: 'Rock Salt', cursive;
+    color: #eeeeee;
 }
 
 .tempF {
     font-size: 20pt;
     font-family: 'Rock Salt', cursive;
+    color: #eeeeee;
 }
 
 span.glyphicon-cutlery{
