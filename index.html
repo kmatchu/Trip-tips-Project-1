@@ -8,7 +8,11 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="assets/style.css">
+
+    <link rel="icon" href="assets/logo3.png" type="image/png" sizes="16x16">
+
     <link href="https://fonts.googleapis.com/css?family=Raleway|Rock+Salt" rel="stylesheet">
+
     <style>
         .options {
             height: 140px;
@@ -36,7 +40,7 @@
                 </ul>
             <form class="form-inline my-2 my-lg-0" id="search-form">
                 <span class='glyphicon glyphicon-search' id="search_icon"></span>
-                <input class="form-control mr-sm-2" type="search" placeholder="City Name, State" aria-label="Search" id="city-input">
+                <input class="form-control mr-sm-2" type="search" placeholder="City Name, State" aria-label="Search" id="city-input" onclick="this.form.reset()">
                       
                 <!-- This button will trigger our AJAX call -->
                 <button id="find-city" type="submit" value="Search">Search</button>

@@ -28,9 +28,21 @@ body {
     font-family: 'Raleway', sans-serif;
    
 }
+
+.navButtons{
+    text-transform: capitalize;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-left: 5px;
+
+}
+
+.dropdown-menu{
+    background: #B7D1FF;
+}
 #search-form {
     float: right;
-    padding-top: 18px;
+    padding-top: 17px;
     padding-right: 15px;
     font-family: 'Raleway', sans-serif;
     
@@ -89,9 +101,7 @@ body {
 }
 a{
     color: #eeeeee;
-
     text-transform: capitalize;
-
 }
 
 .cityName {
@@ -125,6 +135,11 @@ span.glyphicon-tree-conifer{
 span.glyphicon-search{
     font-size: 25px;
     top: 8px;
+    color: #666666;
+}
+
+.glyphicon{
+    color: #78787F;
 }
 
 
