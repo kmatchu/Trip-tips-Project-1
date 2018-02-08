@@ -157,6 +157,7 @@ span.glyphicon-search{
     padding-top: 25px;
     padding-bottom: 25px;
     background: plum;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 #weather_box{
@@ -219,6 +220,7 @@ li {
     text-align: center;
     background: #9F99CC;
     /* align-content: center; */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .thumbnail img{
@@ -236,6 +238,7 @@ li {
 .foodThumb {
     width: 200px;
     float: left; 
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 
