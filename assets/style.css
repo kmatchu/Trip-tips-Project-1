@@ -75,15 +75,12 @@
 
 .cityButtons{
     padding-top: 12px;
-<<<<<<< HEAD
     padding-left: 10px;
     text-decoration-color: none;
 }
 a{
     color: #eeeeee;
-=======
     text-transform: capitalize;
->>>>>>> 4f04a716f4308e5e19ac3855ff2866f591a830ce
 }
 
 .cityName {
