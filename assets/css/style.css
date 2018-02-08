@@ -292,7 +292,7 @@ html, body {
     margin: 0; padding: 0;
 }
 .hero-bkg-animated {
-    background: gray url(../assets/clouds.jpg) repeat 0 0;
+    background: gray url(../images/clouds.jpg) repeat 0 0;
     -webkit-animation: slide 20s linear infinite;
 }
   
