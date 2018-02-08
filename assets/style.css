@@ -42,7 +42,7 @@ body {
 }
 #search-form {
     float: right;
-    padding-top: 10px;
+    padding-top: 4px;
     padding-right: 17px;
     font-family: 'Raleway', sans-serif;
 
@@ -95,8 +95,6 @@ body {
 }
 
 .cityButtons{
-
-    padding-top: 6px;
     padding-left: 10px;
     text-decoration-color: none;
     font-family: 'Raleway', sans-serif;
