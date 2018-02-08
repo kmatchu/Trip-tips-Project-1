@@ -86,6 +86,7 @@
 
 .cityButtons{
     padding-top: 12px;
+    text-transform: capitalize;
 }
 
 .cityName {

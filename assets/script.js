@@ -3,10 +3,10 @@ var city= 0;
 $("#find-city").on("click", function(event) {
     event.preventDefault();
     
+    
     city = $("#city-input").val();
     console.log(city);
-    
-    
+        
     var lowerCity = city.toLowerCase();
     // var cityString = lowerCity.replace(/ /g, "-");
     setWeatherBox(lowerCity);
@@ -15,6 +15,7 @@ $("#find-city").on("click", function(event) {
     hideJumbo();
     hideSearch();
     EmptyDivs();
+    // $("#city-input").val(" ");
 });
 
 $("#find-cityj").on("click", function(event) {
