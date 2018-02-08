@@ -451,17 +451,18 @@ var newsRender = function(location){
 var render = function(){
     $(".currentOptions").remove();
     for(var i=0;i<displayArray.length;i++){
-        $($.parseHTML(displayArray[i])).children("button").data("index",i);
-        $(".appendHere").append(displayArray[i]);
-        
+        var obj = $.parseHTML(displayArray[i]);
+        $(obj).children("button").val(i);
+        $(".appendHere").append(obj);
+        $(".appendHere").hide().fadeIn("slow");
     }
-    $(".appendHere").append(displayArray[i]).hide().fadeIn("slow")
+    
 };
 
 
 
 $(document).on("click",".x", function(){
-    current = $(this).data("index");
+    current = $(this).val();
     displayArray.splice(current,1);
     render();          
 }); 
