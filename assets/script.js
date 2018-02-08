@@ -34,7 +34,7 @@ $("#find-cityj").on("click", function(event) {
     EmptyDivs();
 });
 
-$(document).on("click", ".headerButtons", function(){
+$(document).on("click", ".navButtons", function(){
     console.log($(this).text());
     
     setWeatherBox($(this).text());
