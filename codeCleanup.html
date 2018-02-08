@@ -4,8 +4,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/style.css">
 <style>
-    .optionButtons {
-        height: 140px;
+    .buttonAppendHere {
+        height: 220px;
         overflow: scroll;
     }
 
@@ -18,29 +18,41 @@
     }
 </style>
 </head>
-<body>
-    <div class="container-fluid" id="topBar">
-        <nav class="navbar sticky-top">
-            <img id="logoIMG" src="assets/logo3.png" class="d-inline-block align-top navbar-brand" alt="Logo">
-            <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 cityButtons"><li class='nav-item active navbarList'></li></ul>
+<body class="hero-bkg-animated">
+<div class="container-fluid-nav text-center" id="topBar">
+    <nav class="navbar navbar-expand-lg navbar-fixed-top" id="navcontainer">
+        <a class="brand" href="index.html"><img id="logoIMG" src="assets/logo3.png" class="d-inline-block align-top" alt=""></a>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav cityButtons">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="navabarCitiesDropdown">Searched Cities<span class="caret"></span></a>
+                    <ul class="dropdown-menu navbarList">
+                    </ul>
+                </li>
+            </ul>
             <form class="form-inline my-2 my-lg-0" id="search-form">
-                <span class="navbar-text" id="search-input">Search a City, State: </span>
+                <span class='glyphicon glyphicon-search' id="search_icon"></span>
                 <input class="form-control mr-sm-2" type="search" placeholder="City Name, State" aria-label="Search" id="city-input">
-                <button id="find-city" type="button" value="Search">Search</button>
-            </form>
-            </div>
-        </nav>
-    </div>
 
-    <div class="container-fluid">
+                <!-- This button will trigger our AJAX call -->
+                <button id="find-city" type="submit" value="Search">Search</button>
+            </form>
+        </div>
+    </nav>
+</div>
+<div class="container-fluid">
         <div class="row" id="jumbo">
             <div class="col-md-12" id="searchJumbo">
-            <form id="search-formj">
-                <label for="search-input">Search a City, State</label>
-                <input type="text" id="city-inputj">
-                <input id="find-cityj" type="button" value="Search">
-            </form>
+                <div id="billboard">
+                <img src='assets/billboard.png' alt="billboard_pic" width="75%">
+                <p id="tagLine">Plan Your Next Adventure!</p>
+                <form id="search-formj">
+                    <label for="search-input">Search a City, State</label>
+                        <input type="text" id="city-inputj">                      
+                            <!-- This button will trigger our AJAX call -->
+                        <button id="find-cityj" type="submit" value="Search">Search</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -60,6 +72,7 @@
         <div class="row appendHere">
             <div class="col-md-3 optionButtons">
                 <div class="btn-group-vertical buttonAppendHere"></div>
+                <div class="emptySpace"></div>
             </div>
         </div>
     </div>
@@ -91,12 +104,23 @@
         </div>
     </div>
 
+<footer class="footer">
+        <div class="container">
+            <p id="footer_text">© 2018 Copyright: CJ's Travel</p>
+        </div>
+</footer>
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script>
 var currentLoca = "";
 var currentLoca = "";
 var cityName = "";
 var displayArray = [];
+$(".information").hide();
+$("#weather").hide();
+
+
 
 $(document).on("click", "#find-city", function(){
     var search = $("#city-input").val();
@@ -109,6 +133,14 @@ $(document).on("click", "#find-cityj", function(){
     console.log(search);
     parseName(search);
 });
+
+var renderButtons = function (val) {
+    var obj = $("<li class='headerButtons'><a class='nav-link' href='#'>").text(val);
+    var divider = $("<li role='separator' class='divider'>");
+    $(".navbarList").append(obj);   
+    $(".navbarList").append(divider);
+    event.preventDefault();
+};
 
 $(document).on("click",".headerButtons",function(){
     var buttonVal = $(this).text();
@@ -123,16 +155,11 @@ var parseName = function(inputCity){
     var stateAbrv = arrayCity[1].trim();
 
     setWeatherBox(cityName,stateAbrv);
-    // renderButtons(fullCity);
-    // hideJumbo();
+    renderButtons(fullCity);
+    $("#jumbo").hide();
     // hideSearch();
     // EmptyDivs();
 } ;
-
-var renderButtons = function (thisCity) {
-    var obj = $("<a class='nav-link headerButtons' href='#'>").text(thisCity);
-    $(".navbarList").append(obj);
-};
 
 var setWeatherBox = function (name,state) {
     var weatherURL = "http://api.wunderground.com/api/9b91158e94439d41/conditions/q/" + state + "/" + name + ".json";
@@ -160,10 +187,16 @@ var setWeatherBox = function (name,state) {
     $("#weather").fadeIn();
 };
 
+var reset = function(){
+    displayArray = [];
+    render();
+    $(".buttonAppendHere").html("");
+}
 
 
 
 $(document).on("click", "#food_icon", function () {
+    reset();
     if($(".information").show()){   $(".information").fadeOut("slow")   };
     $(".buttonG1").val(1).text("$");
     $(".buttonG2").val(2).text("$$");
@@ -173,6 +206,7 @@ $(document).on("click", "#food_icon", function () {
 });
 
 $(document).on("click", "#travel_icon", function () {
+    reset();
     if($(".information").show()){   $(".information").fadeOut("slow")   };
     $(".buttonG1").val(cityName).text("Map");
     $(".buttonG2").val("transportation+station+in+" + cityName).text("Transport");
@@ -182,6 +216,7 @@ $(document).on("click", "#travel_icon", function () {
 });
 
 $(document).on("click", "#concerts_icon", function () {
+    reset();
     if($(".information").show()){   $(".information").fadeOut("slow")   };
     $(".buttonG1").val("Rock").text("Rock");
     $(".buttonG2").val("Country").text("Country");
@@ -191,6 +226,7 @@ $(document).on("click", "#concerts_icon", function () {
 });
 
 $(document).on("click", "#landmark_icon", function () {
+    reset();
     if($(".information").show()){   $(".information").fadeOut("slow")   };
     $(".buttonG1").val("shopping_mall|shoe_store|supermarket|clothing_store|department_store").text("Shopping Spots");
     $(".buttonG2").val("museum|art_gallery|aquarium").text("Museums");
@@ -202,7 +238,7 @@ $(document).on("click", "#landmark_icon", function () {
 $(document).on("click", ".genre_btn", function () {
             var genre = $(this).val();
             var text = $(this).text();
-            displayArray = [];
+            reset();
             $(".currentOptions").remove();
             if ($.inArray(genre, ["1", "2", "3", "4"]) >= 0) {
                 foodRender(genre);  }
@@ -240,10 +276,10 @@ var foodRender = function(thisGenre){
                         };
                     $(".buttonAppendHere").html(thisHTML)
                     $(".optionButtonFood").on("click", function () {
-                        if (displayArray.length === 3) { alert("Please clear a box") }
+                        if (displayArray.length === 4) { alert("Please clear a box") }
                         else {
                             var currentFoodVal = $(this).val();
-                            var foodHTMLToAdd = "<div class='col-md-3 currentOptions'><button class='x'>X</button><ul><li>" + obj.businesses[currentFoodVal].name + "</li><li>" + obj.businesses[currentFoodVal].categories[0].title + "</li><li><a href=" + obj.businesses[currentFoodVal].url + ">Yelp Link</a></li><li>" + obj.businesses[currentFoodVal].display_phone + "</li></ul></div>";
+                            var foodHTMLToAdd = "<div class='col-md-2 currentOptions thumbnail'><button class='x'>X</button><img src=" + obj.businesses[currentFoodVal].image_url + " alt="+ obj.businesses[currentFoodVal].name + " class = 'displayPhoto' /><ul><li>" + obj.businesses[currentFoodVal].name + "</li><li>" + obj.businesses[currentFoodVal].categories[0].title + "</li><li>" + obj.businesses[currentFoodVal].display_phone + "</li><li><a href=" + obj.businesses[currentFoodVal].url + ">Yelp Link</a></li></ul></div>";
                             displayArray.push(foodHTMLToAdd);
                             render();
                         };
@@ -265,10 +301,10 @@ var concertRender = function(thisGenre){
                     };
 
         $(".optionButtonFood").on("click", function () {
-            if(displayArray.length === 3){ alert("Please clear a box")}
+            if(displayArray.length === 4){ alert("Please clear a box")}
             else{
             var currentVal = $(this).val();
-            var concertHTMLToAdd = "<div class='col-md-3 currentOptions'><button class='x'>X</button><ul><li>" + response._embedded.events[currentVal].name + "</li><li>" + response._embedded.events[currentVal]._embedded.venues[0].name + ", " + response._embedded.events[currentVal].dates.start.localDate + "</li><li><a href=" + response._embedded.events[currentVal].url + ">Purchase Tickets</a></li></ul></div>";
+            var concertHTMLToAdd = "<div class='col-md-2 currentOptions thumbnail'><button class='x'>X</button><img src=" + response._embedded.events[currentVal].images[0].url + " alt="+ response._embedded.events[currentVal].name + " /><ul><li>" + response._embedded.events[currentVal].name + "</li><li>" + response._embedded.events[currentVal]._embedded.venues[0].name + ", " + response._embedded.events[currentVal].dates.start.localDate + "</li><li><a href=" + response._embedded.events[currentVal].url + ">Purchase Tickets</a></li></ul></div>";
             // Can this be made global?
             displayArray.push(concertHTMLToAdd);
             render();   
@@ -290,10 +326,10 @@ var stationsRender = function(location){
                 };
     
     $(".optionButtonStation").on("click", function () {
-            if(displayArray.length === 1){ alert("Please clear the box")}
+            if(displayArray.length === 4){ alert("Please clear the box")}
             else{
                 var currentVal = $(this).val();
-                var htmlToAdd = "<div class='col-md-9 currentOptions'><button class='x'>X</button><ul><li>" + response.results[currentVal].name + "</li><li>" +response.results[currentVal].formatted_address +"</li><li> <a href= https://www.google.com/maps/search/" + response.results[currentVal].name + " target='_blank'>Website</a></li></ul></div>"
+                var htmlToAdd = "<div class='col-md-2 currentOptions thumbnail'><button class='x'>X</button><img src=https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&sensor=false&photoreference=" + response.results[currentVal].photos[0].photo_reference + "&key=AIzaSyB-OVCwzm7e1cFAFr9n5HEmLTPySWZSoto alt='picture' /><ul><li>" + response.results[currentVal].name + "</li><li>" +response.results[currentVal].formatted_address +"</li><li> <a href= https://www.google.com/maps/search/" + response.results[currentVal].name + " class='btn btn-primary' role='button' target='_blank'>Website</a></li></ul></div>"
                 displayArray.push(htmlToAdd);
                 render();   
                 };
@@ -314,10 +350,10 @@ var hotelRender = function(location){
                 };
     
     $(".optionButtonHotel").on("click", function () {
-            if(displayArray.length === 1){ alert("Please clear the box")}
+            if(displayArray.length === 4){ alert("Please clear the box")}
             else{
                 var currentVal = $(this).val();
-                var htmlToAdd = "<div class='col-md-9 currentOptions'><button class='x'>X</button><ul><li>" + response.results[currentVal].name + "</li><li>" +response.results[currentVal].formatted_address +"</li><li> <a href= https://www.google.com/maps/search/" + response.results[currentVal].name + " target='_blank'>Website</a></li></ul></div>"
+                var htmlToAdd = "<div class='col-md-2 currentOptions thumbnail'><button class='x'>X</button><img src=https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&sensor=false&photoreference=" + response.results[currentVal].photos[0].photo_reference + "&key=AIzaSyB-OVCwzm7e1cFAFr9n5HEmLTPySWZSoto alt='picture' /><ul><li>" + response.results[currentVal].name + "</li><li>" +response.results[currentVal].formatted_address +"</li><li> <a href= https://www.google.com/maps/search/" + response.results[currentVal].name + " class='btn btn-primary' role='button' target='_blank'>Website</a></li></ul></div>"
                 displayArray.push(htmlToAdd);
                 render();   
             };
@@ -329,7 +365,7 @@ var mapRender = function(location){
     var mapURL = "https://maps.googleapis.com/maps/api/staticmap?center=" + location + "&zoom=13&size=600x300&maptype=roadmap&key=AIzaSyA5S3HY_HcD1tcwYlCjWqC0HpZCkGs0_HM";
     if(displayArray.length === 1){ alert("Please clear the box")}
     else{
-    var htmlToAdd = "<img src=" + mapURL + " alt='citymap' /><a href=" + mapURL + " target='_blank'></a>";
+    var htmlToAdd = "<div class='col-md-6 currentOptions'><button class='x'>X</button><img src=" + mapURL + " alt='citymap' height = '100%' /></div>";
     displayArray.push(htmlToAdd);
     render();   };
 };
@@ -347,10 +383,10 @@ var newsRender = function(location){
         };
 
                 $(".optionButtonNews").on("click", function () {
-                if(displayArray.length === 1){ alert("Please clear the box")}
+                if(displayArray.length === 3){ alert("Please clear the box")}
                 else{
                 var currentVal = $(this).val();
-                var htmlToAdd = "<div class='col-md-9 currentOptions'><button class='x'>X</button><ul><li> <a href =" + response.response.docs[currentVal].web_url + " target = '_blank'>" + response.response.docs[currentVal].headline.main + "</a></li>" + "<li>" + response.response.docs[currentVal].snippet + "</li></ul></div>"; 
+                var htmlToAdd = "<div class='col-md-3 currentOptions thumbnail'><button class='x'>X</button><img src=https://static01.nyt.com/" + response.response.docs[currentVal].multimedia[0].url + " /><ul><li><h3>" + response.response.docs[currentVal].headline.main + "</h3></li><li font-size= 11px>" + response.response.docs[currentVal].snippet + "</li><li><a href =" + response.response.docs[currentVal].web_url + " target = '_blank'>Read More</a></ul></div>"; 
                 displayArray.push(htmlToAdd);
                 render();
                 }
@@ -371,10 +407,10 @@ var newsRender = function(location){
         };
 
         $(".optionButtonAttract").on("click", function () {
-            if(displayArray.length === 1){ alert("Please clear the box")}
+            if(displayArray.length === 4){ alert("Please clear the box")}
                 else{
             var currentVal = $(this).val();
-            var htmlToAdd = "<div class='col-md-9 currentOptions'><button class='x'>X</button><ul><li>" + response.results[currentVal].name + "</li><li>" + response.results[currentVal].vicinity + "</li><li><a target=_blank href=https://www.google.com/maps/place/" + response.results[currentVal].vicinity.replace(/ /g, "+") + ">Google Map Location</a></li></ul>";
+            var htmlToAdd = "<div class='col-md-2 currentOptions thumbnail'><button class='x'>X</button><img src=https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&sensor=false&photoreference=" + response.results[currentVal].photos[0].photo_reference + "&key=AIzaSyB-OVCwzm7e1cFAFr9n5HEmLTPySWZSoto alt='picture' /><ul><li>" + response.results[currentVal].name + "</li><li>" + response.results[currentVal].vicinity + "</li><li><a target=_blank href=https://www.google.com/maps/place/" + response.results[currentVal].vicinity.replace(/ /g, "+") + ">Google Map Location</a></li></ul>";
                 displayArray.push(htmlToAdd);
                 render();
         };
