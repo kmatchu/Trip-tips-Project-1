@@ -12,6 +12,11 @@ $(".transpo").on("click", function () {
 
                 var currentVal = $(this).val();
                 var website = response.results[currentVal].name;
+
+                console.log(response.results[currentVal].name);
+                var formatWebsite = website.replace(/ /g, "+");
+                console.log(formatWebsite);
+         
                 var referencephotoID = response.results[currentVal].photos[0].photo_reference;
                 var photowebsite = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&sensor=false&photoreference=" + referencephotoID + "&key=AIzaSyB-OVCwzm7e1cFAFr9n5HEmLTPySWZSoto"
                 var formatWebsite = website.replace(/ /g, "+");
@@ -34,10 +39,15 @@ $(".hotels").on("click", function () {
 
                 var currentVal = $(this).val();
                 var website = response.results[currentVal].name;
+
+                console.log(response.results[currentVal].name);
+               
+         
                 var referencephotoID = response.results[currentVal].photos[0].photo_reference;
                 var photowebsite = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&sensor=false&photoreference=" + referencephotoID + "&key=AIzaSyB-OVCwzm7e1cFAFr9n5HEmLTPySWZSoto"
                 var formatWebsite = website.replace(/ /g, "+");
                 var htmlToAdd = "<div class='thumbnail'><img src=" + photowebsite + " alt="+ response.results[currentVal].name + " height= 100px /><div class='caption'><h3 id='hotelName'>" + response.results[currentVal].name + "</h3><p id='hotelAddy'>" + response.results[currentVal].formatted_address + "</p><p><a href= 'https://www.google.com/maps/search/" + formatWebsite + "' target='_blank' class='btn btn-primary' role='button'>More Info</a></p></div></div>";
+
                 $("#currentTravel").html(htmlToAdd);
             });
 });
