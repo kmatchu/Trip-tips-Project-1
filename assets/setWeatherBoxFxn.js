@@ -8,7 +8,7 @@ var currentLoca2;
 var renderButtons = function (val) {
     var obj = $("<li><a class='nav-link' href='#'>").text(val);
     var divider = $("<li role='separator' class='divider'>")
-    obj.addClass("headerButtons");
+    obj.addClass("navButtons");
     $(".navbarList").append(obj);
     $(".navbarList").append(divider);
 
