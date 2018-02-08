@@ -2,7 +2,6 @@
     height: 100px;
     border-image-width: 5px;
     border-color: blueviolet;
-    background-color: rgb(253, 255, 254);
     padding-top:10px;
 }
 #logoIMG{
@@ -28,12 +27,6 @@
     padding-top: 18px;
     padding-right: 15px;
     
-}
-#search-input{
-
-}
-.searchBar {
-
 }
 
 #jumbo{
@@ -80,12 +73,13 @@
 
 }
 
-#searchJumbo{
-    
-}
-
 .cityButtons{
     padding-top: 12px;
+    padding-left: 10px;
+    text-decoration-color: none;
+}
+a{
+    color: #eeeeee;
 }
 
 .cityName {
@@ -147,8 +141,8 @@ span.glyphicon-search{
 #navcontainer{
     height: 100px;
     border-image-width: 5px;
-    border-color: blueviolet;
-    background-color: #eeeeee;
+    border-color: #583E7F;
+    background-color: #9F99CC;
     padding-top:10px;
     border-bottom-width: 1.5px;
    
@@ -175,17 +169,22 @@ li {
 
 #headline {
     text-align: center;
+    color: #eeeeee;
 }
 
 #brief {
     font-size: 11pt;
-    color: grey;
+    color: #eeeeee
 }
 
 .thumbnail {
     /* width: 600px; */
     border-color: blueviolet;
+    color: #eeeeee;
     align-content: center;
+    text-align: center;
+    background: #9F99CC;
+    margin-right: 20px;
 }
 
 .foodThumb {
@@ -256,22 +255,25 @@ html, body {
     to { background-position: -400px 0; }
 }
 
-#navabarCitiesDropdown>li>a:focus, #navabarCitiesDropdown>li>a:hover{
-    color: purple;
-    background-color: #72008656;
+
+
+/* #navabarCitiesDropdown:hover, #navabarCitiesDropdown:focus,{
+    color: #eeeeee;
+    background-color: #B7D1FF;
+} */
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover{
+    color: #9F99CC;
+    background-color: #B7D1FF;
 }
 
-#navabarCitiesDropdown{
-    color: purple;
-}
-
-#navabarCitiesDropdown:hover, #navabarCitiesDropdown:focus{
-    background-color: #17acda56;
+.nav>li>a:focus, .nav>li>a:hover{
+    color: #9F99CC;
+    background-color: #B7D1FF;
 }
 
 .footer{
     /* background: linear-gradient(to bottom right, purple, plum); */
-    background: rgb(114, 0, 114);
+    background: #583E7F;
     width: 100%;
     text-align: center;
     font-size: 15px;
