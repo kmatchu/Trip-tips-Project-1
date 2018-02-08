@@ -129,20 +129,16 @@ $("#weather").hide();
 
 
 $(document).on("click", "#find-city", function(){
-    event.preventDefault();
     var search = $("#city-input").val();
     console.log(search);
     renderButtons(search);
-  
     parseName(search);
 });
 
 $(document).on("click", "#find-cityj", function(){
-    event.preventDefault();
     var search = $("#city-inputj").val();
     console.log(search);
     renderButtons(search);
-
     parseName(search);
 });
 
