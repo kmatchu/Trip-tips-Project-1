@@ -166,7 +166,7 @@ var parseName = function(inputCity){
 } ;
 
 var setWeatherBox = function (name,state) {
-    var weatherURL = "http://api.wunderground.com/api/9b91158e94439d41/conditions/q/" + state + "/" + name + ".json";
+    var weatherURL = "https://api.wunderground.com/api/9b91158e94439d41/conditions/q/" + state + "/" + name + ".json";
     var cityPicURL = "https://api.teleport.org/api/urban_areas/slug:" + name + "/images/";
     if($("#weather_container").hide()){   
         $("#weather_container").fadeIn("slow")   
