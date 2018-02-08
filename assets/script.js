@@ -15,7 +15,7 @@ $("#find-city").on("click", function(event) {
     hideJumbo();
     hideSearch();
     EmptyDivs();
-    // $("#city-input").val(" ");
+    $("#city-input").val(" ");
 });
 
 $("#find-cityj").on("click", function(event) {

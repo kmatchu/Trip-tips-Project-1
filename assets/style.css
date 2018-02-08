@@ -7,10 +7,15 @@
 #logoIMG{
     height: 75px;
 }
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
 #buttonHead {
     font-size: 15pt;
     text-align: left;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 .headerButtons{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
@@ -20,12 +25,14 @@
     padding-right: 10px;
     padding-left: 10px;
     margin-left: 5px;
+    font-family: 'Raleway', sans-serif;
    
 }
 #search-form {
     float: right;
     padding-top: 18px;
     padding-right: 15px;
+    font-family: 'Raleway', sans-serif;
     
 }
 
@@ -58,7 +65,7 @@
     font-size: 2vw;
     position: absolute;
     color: purple;
-    font-family: 'Homemade Apple', cursive;
+    font-family: 'Rock Salt', cursive;
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%)
@@ -70,6 +77,7 @@
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-family: 'Raleway', sans-serif;
 
 }
 
@@ -77,6 +85,7 @@
     padding-top: 12px;
     padding-left: 10px;
     text-decoration-color: none;
+    font-family: 'Raleway', sans-serif;
 }
 a{
     color: #eeeeee;
@@ -88,10 +97,12 @@ a{
 .cityName {
     font-size: 20pt;
     margin-left: 10px;
+    font-family: 'Rock Salt', cursive;
 }
 
 .tempF {
     font-size: 20pt;
+    font-family: 'Rock Salt', cursive;
 }
 
 span.glyphicon-cutlery{
@@ -286,7 +297,6 @@ html, body {
 }
 
 #footer_text{
-    
     margin-top: 30px;
     color: #eeeeee
 }

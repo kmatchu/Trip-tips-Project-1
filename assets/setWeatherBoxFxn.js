@@ -128,6 +128,7 @@ var render = function(){
     for(var i=0;i<displayArray.length;i++){
        $($.parseHTML(displayArray[i])).children("button").data("index",i);
         $(".appendHere").append(displayArray[i]);
+    $("#city-input").val(" ");
     }
 };
 
