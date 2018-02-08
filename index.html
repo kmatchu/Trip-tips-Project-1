@@ -39,7 +39,7 @@
                 <input class="form-control mr-sm-2" type="search" placeholder="City Name, State" aria-label="Search" id="city-input">
 
                 <!-- This button will trigger our AJAX call -->
-                <button id="find-city" type="submit" value="Search">Search</button>
+                <button id="find-city" type="button" value="Search">Search</button>
             </form>
         </div>
     </nav>
@@ -54,7 +54,7 @@
                     <label for="search-input">Search a City, State</label>
                         <input type="text" id="city-inputj">                      
                             <!-- This button will trigger our AJAX call -->
-                        <button id="find-cityj" type="submit" value="Search">Search</button>
+                        <button id="find-cityj" type="button" value="Search">Search</button>
                     </form>
                 </div>
             </div>
@@ -129,39 +129,45 @@ $("#weather").hide();
 
 
 $(document).on("click", "#find-city", function(){
+    event.preventDefault();
     var search = $("#city-input").val();
     console.log(search);
+    renderButtons(search);
+  
     parseName(search);
 });
 
 $(document).on("click", "#find-cityj", function(){
+    event.preventDefault();
     var search = $("#city-inputj").val();
     console.log(search);
+    renderButtons(search);
+
     parseName(search);
 });
 
 var renderButtons = function (val) {
+    event.preventDefault();
     var obj = $("<li class='navButtons'><a class='nav-link' href='#'>").text(val);
     var divider = $("<li role='separator' class='divider'>");
     $(".navbarList").append(obj);   
     $(".navbarList").append(divider);
-    event.preventDefault();
+    
 };
 
-$(document).on("click",".headerButtons",function(){
+$(document).on("click",".navButtons",function(){
     var buttonVal = $(this).text();
     parseName(buttonVal);
 });
 
 var parseName = function(inputCity){
-    
+    $(".information").hide();
     var fullCity = inputCity;
     var arrayCity = fullCity.toLowerCase().split(",");
     cityName = arrayCity[0].trim().replace(/ /g, "-");
     var stateAbrv = arrayCity[1].trim();
 
     setWeatherBox(cityName,stateAbrv);
-    renderButtons(fullCity);
     $("#jumbo").hide();
     //hideSearch();
     //EmptyDivs();
