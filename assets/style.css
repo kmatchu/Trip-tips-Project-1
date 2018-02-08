@@ -2,16 +2,20 @@
     height: 60px;
     border-image-width: 5px;
     border-color: blueviolet;
-    background-color: rgb(253, 255, 254);
     padding-top:10px;
 }
 #logoIMG{
     height: 45px;
 }
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
 #buttonHead {
     font-size: 15pt;
     text-align: left;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 .headerButtons{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
@@ -21,19 +25,28 @@
     padding-right: 10px;
     padding-left: 10px;
     margin-left: 5px;
+    font-family: 'Raleway', sans-serif;
    
+}
+
+.navButtons{
+    text-transform: capitalize;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-left: 5px;
+
+}
+
+.dropdown-menu{
+    background: #B7D1FF;
 }
 #search-form {
     float: right;
     padding-top: 10px;
     padding-right: 17px;
+    font-family: 'Raleway', sans-serif;
+
     
-}
-#search-input{
-
-}
-.searchBar {
-
 }
 
 #jumbo{
@@ -65,7 +78,7 @@
     font-size: 2vw;
     position: absolute;
     color: purple;
-    font-family: 'Homemade Apple', cursive;
+    font-family: 'Rock Salt', cursive;
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%)
@@ -77,24 +90,31 @@
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-family: 'Raleway', sans-serif;
 
-}
-
-#searchJumbo{
-    
 }
 
 .cityButtons{
+
     padding-top: 6px;
+    padding-left: 10px;
+    text-decoration-color: none;
+    font-family: 'Raleway', sans-serif;
+}
+a{
+    color: #eeeeee;
+    text-transform: capitalize;
 }
 
 .cityName {
     font-size: 20pt;
     margin-left: 10px;
+    font-family: 'Rock Salt', cursive;
 }
 
 .tempF {
     font-size: 20pt;
+    font-family: 'Rock Salt', cursive;
 }
 
 span.glyphicon-cutlery{
@@ -117,6 +137,11 @@ span.glyphicon-tree-conifer{
 span.glyphicon-search{
     font-size: 25px;
     top: 8px;
+    color: #666666;
+}
+
+.glyphicon{
+    color: #78787F;
 }
 
 
@@ -147,8 +172,9 @@ span.glyphicon-search{
 #navcontainer{
     height: 60px;
     border-image-width: 5px;
-    border-color: blueviolet;
-    background-color: #eeeeee;
+
+    border-color: #583E7F;
+    background-color: #9F99CC;
     padding-top:6px;
     border-bottom-width: 1px;
    
@@ -175,17 +201,23 @@ li {
 
 #headline {
     text-align: center;
+    color: #eeeeee;
 }
 
 #brief {
     font-size: 11pt;
-    color: grey;
+    color: #eeeeee
 }
 
 .thumbnail {
     /* width: 600px; */
     border-color: blueviolet;
+
     margin-right: 1%;
+    color: #eeeeee;
+    align-content: center;
+    text-align: center;
+    background: #9F99CC;
     /* align-content: center; */
 }
 
@@ -193,6 +225,7 @@ li {
     margin-left:5%;
     width:90%;
     height:50%;
+
 }
 
 .emptySpace {
@@ -268,22 +301,25 @@ html, body {
     to { background-position: -400px 0; }
 }
 
-#navabarCitiesDropdown>li>a:focus, #navabarCitiesDropdown>li>a:hover{
-    color: purple;
-    background-color: #72008656;
+
+
+/* #navabarCitiesDropdown:hover, #navabarCitiesDropdown:focus,{
+    color: #eeeeee;
+    background-color: #B7D1FF;
+} */
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover{
+    color: #9F99CC;
+    background-color: #B7D1FF;
 }
 
-#navabarCitiesDropdown{
-    color: purple;
-}
-
-#navabarCitiesDropdown:hover, #navabarCitiesDropdown:focus{
-    background-color: #17acda56;
+.nav>li>a:focus, .nav>li>a:hover{
+    color: #9F99CC;
+    background-color: #B7D1FF;
 }
 
 .footer{
     /* background: linear-gradient(to bottom right, purple, plum); */
-    background: rgb(114, 0, 114);
+    background: #583E7F;
     width: 100%;
     text-align: center;
     font-size: 12px;
@@ -294,8 +330,9 @@ html, body {
 }
 
 #footer_text{
-    
+
     margin-top: 6px;
+
     color: #eeeeee
 }
 

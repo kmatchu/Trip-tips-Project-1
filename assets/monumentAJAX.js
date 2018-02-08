@@ -43,7 +43,7 @@ $(".monument").on("click", function () {
             var formatWebsite = website.replace(/ /g, "+");
             console.log(formatWebsite);
             var photowebsite = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&sensor=false&photoreference=" + referencephotoID + "&key=AIzaSyB-OVCwzm7e1cFAFr9n5HEmLTPySWZSoto"
-            var htmlToAdd = "<ul><li><img src=" + photowebsite + " alt='error'></li><li>" + response.results[currentVal].name + "</li><li>" + response.results[currentVal].vicinity + "</li><li><a target=_blank href=" + formatWebsite + ">Google Map Location</a></li></ul>";
+            var htmlToAdd = "<div class='thumbnail'><ul><li><img src=" + photowebsite + " alt='error' height=100px></li><li>" + response.results[currentVal].name + "</li><li>" + response.results[currentVal].vicinity + "</li><li><a target=_blank href=" + formatWebsite + " class='btn btn-primary' role='button'>Google Map Location</a></li></ul>";
 
             $("#currentMonument").html(htmlToAdd);
             console.log(referencephotoID);
