@@ -163,15 +163,15 @@ var parseName = function(inputCity){
     cityName = arrayCity[0].trim().replace(/ /g, "-");
     var stateAbrv = arrayCity[1].trim();
 
-    setWeatherBox(cityName,stateAbrv);
+    setWeatherBox(arrayCity[0],cityName,stateAbrv);
     $("#jumbo").hide();
     //hideSearch();
     //EmptyDivs();
 } ;
 
-var setWeatherBox = function (name,state) {
-    var weatherURL = "https://api.wunderground.com/api/9b91158e94439d41/conditions/q/" + state + "/" + name + ".json";
-    var cityPicURL = "https://api.teleport.org/api/urban_areas/slug:" + name + "/images/";
+var setWeatherBox = function (name1,name2,state) {
+    var weatherURL = "https://api.wunderground.com/api/9b91158e94439d41/conditions/q/" + state + "/" + name1 + ".json";
+    var cityPicURL = "https://api.teleport.org/api/urban_areas/slug:" + name2 + "/images/";
     if($("#weather_container").hide()){   
         $("#weather_container").fadeIn("slow")   
     }
