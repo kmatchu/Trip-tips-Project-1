@@ -1,3 +1,16 @@
+.buttonAppendHere {
+    height: 220px;
+    overflow: scroll;
+}
+
+.x {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    height: 26px;
+    width: 26px;
+}
+
 #topBar{
     height: 60px;
     border-image-width: 5px;
