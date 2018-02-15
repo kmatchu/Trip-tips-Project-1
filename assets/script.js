@@ -15,7 +15,7 @@ $("#find-city").on("click", function(event) {
     hideJumbo();
     hideSearch();
     EmptyDivs();
-    $("#city-input").val(" ");
+    // $("#city-input").val(" ");
 });
 
 $("#find-cityj").on("click", function(event) {
@@ -34,7 +34,7 @@ $("#find-cityj").on("click", function(event) {
     EmptyDivs();
 });
 
-$(document).on("click", ".navButtons", function(){
+$(document).on("click", ".headerButtons", function(){
     console.log($(this).text());
     
     setWeatherBox($(this).text());
