@@ -29,13 +29,13 @@ No additional prerequistes are required.
 
 ## WireFrame
 
-* [Whole Site](/assets/wireframe/Project 1 Wire Frame.jpg?raw=true "Whole Site")
-* [Events Module](/assets/wireframe/US1 - Events.jpg?raw=true "Events Module")
-* [Hotel Module](/assets/wireframe/US2 - Hotel.jpg?raw=true "Hotel Module")
-* [Transit Module](/assets/wireframe/US3 - Transit.jpg?raw=true "Transit Module")
-* [Landmarks Module](/assets/wireframe/US4 - Landmarks.jpg?raw=true "Landmarks Module")
-* [Restaurants Module](/assets/wireframe/US5 - Restaurants.jpg?raw=true "Restuarants Module")
-* [News Module](/assets/wireframe/US6 - Trending.jpg?raw=true "News Module")
+* [Whole Site](https://github.com/kmatchu/Trip-tips-Project-1/blob/master/assets/wireframe/Project%201%20Wire%20Frame.jpg)
+* [Events Module](https://github.com/kmatchu/Trip-tips-Project-1/blob/master/assets/wireframe/US1%20-%20Events.jpg)
+* [Hotel Module](https://github.com/kmatchu/Trip-tips-Project-1/blob/master/assets/wireframe/US2%20-%20Hotel.jpg)
+* [Transit Module](https://github.com/kmatchu/Trip-tips-Project-1/blob/master/assets/wireframe/US3%20-%20Transit.jpg)
+* [Landmarks Module](https://github.com/kmatchu/Trip-tips-Project-1/blob/master/assets/wireframe/US4%20-%20Landmarks.jpg)
+* [Restaurants Module](https://github.com/kmatchu/Trip-tips-Project-1/blob/master/assets/wireframe/US5%20-%20Restaurants.jpg)
+* [News Module](https://github.com/kmatchu/Trip-tips-Project-1/blob/master/assets/wireframe/US6%20-%20Trending.jpg)
 
 
 ## Contributing
