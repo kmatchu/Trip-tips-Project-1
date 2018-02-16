@@ -27,7 +27,8 @@ No additional prerequistes are required.
 * [TicketMaster](https://developer.ticketmaster.com/) - Music info & ticketing
 * [Teleport](https://developers.teleport.org/) - City Photos
 
-+## WireFrame
+## WireFrame
+
 * [Whole Site](./assets/wireframe/Project 1 Wire Frame.jpg)
 * [Events Module](./assets/wireframe/US1 - Events.jpg)
 * [Hotel Module](./assets/wireframe/US2 - Hotel.jpg)
