@@ -1,3 +1,16 @@
+.buttonAppendHere {
+    height: 220px;
+    overflow: scroll;
+}
+
+.x {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    height: 26px;
+    width: 26px;
+}
+
 #topBar{
     height: 60px;
     border-image-width: 5px;
@@ -42,7 +55,7 @@ body {
 }
 #search-form {
     float: right;
-    padding-top: 10px;
+    padding-top: 4px;
     padding-right: 17px;
     font-family: 'Raleway', sans-serif;
 
@@ -95,8 +108,6 @@ body {
 }
 
 .cityButtons{
-
-    padding-top: 6px;
     padding-left: 10px;
     text-decoration-color: none;
     font-family: 'Raleway', sans-serif;
@@ -159,6 +170,7 @@ span.glyphicon-search{
     padding-top: 25px;
     padding-bottom: 25px;
     background: plum;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 #weather_box{
@@ -221,6 +233,7 @@ li {
     text-align: center;
     background: #9F99CC;
     /* align-content: center; */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .thumbnail img{
@@ -238,6 +251,7 @@ li {
 .foodThumb {
     width: 200px;
     float: left; 
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 
@@ -294,7 +308,7 @@ html, body {
     margin: 0; padding: 0;
 }
 .hero-bkg-animated {
-    background: gray url(../assets/clouds.jpg) repeat 0 0;
+    background: gray url(../images/clouds.jpg) repeat 0 0;
     -webkit-animation: slide 20s linear infinite;
 }
   
