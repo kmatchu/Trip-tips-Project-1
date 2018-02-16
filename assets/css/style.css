@@ -74,6 +74,23 @@ body {
     
 }
 
+.container-fluid .jumbotron {
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #9F99CC;
+    color: #eeeeee;
+}
+.jumbotron {
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 25px;
+
+}
+.jumbotron h1{
+   font-size: 35px;
+}
+
 #billboard{
     width: 100%;
     bottom: 22px;
@@ -159,7 +176,7 @@ span.glyphicon-search{
 
 
 #weather_container{
-    height: 610px;
+    height: 100%;
     width: 100%;
     padding-top: 25px;
     padding-bottom: 25px;
