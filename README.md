@@ -28,6 +28,7 @@ No additional prerequistes are required.
 * [Teleport](https://developers.teleport.org/) - City Photos
 
 ## WireFrame
+
 * [Whole Site](/assets/wireframe/Project 1 Wire Frame.jpg?raw=true "Whole Site")
 * [Events Module](/assets/wireframe/US1 - Events.jpg?raw=true "Events Module")
 * [Hotel Module](/assets/wireframe/US2 - Hotel.jpg?raw=true "Hotel Module")
@@ -55,4 +56,3 @@ Also, we'd really like to get images for more than 265 cities worldwide and to m
 We'd also like to make our site mobile-friendly. 
 
 If you're bored and would like to help us out with any of these, feel free to email CJ@CJsTravels.com! 
-
