@@ -28,13 +28,13 @@ No additional prerequistes are required.
 * [Teleport](https://developers.teleport.org/) - City Photos
 
 ## WireFrame
-* [Whole Site](./assets/wireframe/Project 1 Wire Frame.jpg)
-* [Events Module](./assets/wireframe/US1 - Events.jpg)
-* [Hotel Module](./assets/wireframe/US2 - Hotel.jpg)
-* [Transit Module](./assets/wireframe/US3 - Transit.jpg)
-* [Landmarks Module](./assets/wireframe/US4 - Landmarks.jpg)
-* [Restaurants Module](./assets/wireframe/US5 - Restaurants.jpg)
-* [News Module](./assets/wireframe/US6 - Trending.jpg)
+* [Whole Site](/assets/wireframe/Project 1 Wire Frame.jpg?raw=true "Whole Site")
+* [Events Module](/assets/wireframe/US1 - Events.jpg?raw=true "Events Module")
+* [Hotel Module](/assets/wireframe/US2 - Hotel.jpg?raw=true "Hotel Module")
+* [Transit Module](/assets/wireframe/US3 - Transit.jpg?raw=true "Transit Module")
+* [Landmarks Module](/assets/wireframe/US4 - Landmarks.jpg?raw=true "Landmarks Module")
+* [Restaurants Module](/assets/wireframe/US5 - Restaurants.jpg?raw=true "Restuarants Module")
+* [News Module](/assets/wireframe/US6 - Trending.jpg?raw=true "News Module")
 
 
 ## Contributing
