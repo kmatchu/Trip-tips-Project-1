@@ -10,10 +10,10 @@ $(document).on("click", "#food_icon", function () {
     else if($(".information").show()){
         $(".information").fadeOut("slow")
     }
-    $(".buttonG1").val(1).text("$");
-    $(".buttonG2").val(2).text("$$");
-    $(".buttonG3").val(3).text("$$$");
-    $(".buttonG4").val(4).text("$$$$");
+    $(".buttonG1").val('$').text("$");
+    $(".buttonG2").val('$$').text("$$");
+    $(".buttonG3").val('$$$').text("$$$");
+    $(".buttonG4").val('$$$$').text("$$$$");
     $(".information").fadeIn();
 });
 
@@ -83,7 +83,7 @@ $(document).on("click", ".genre_btn", function () {
             var text = $(this).text();
             reset();
             $(".currentOptions").remove();
-            if ($.inArray(genre, ["1", "2", "3", "4"]) >= 0) {
+            if ($.inArray(genre, ["$", "$$", "$$$", "$$$$"]) >= 0) {
                 foodRender(genre);  }
 
             else if (genre === "transportation+station+in+"+cityName) {

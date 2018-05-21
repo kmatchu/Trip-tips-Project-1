@@ -3,7 +3,8 @@
  * @param {string} thisGenre the value of the button that was pressed to trigger this function
  */
 var foodRender = function(thisGenre){
-    var foodURL = 'https://nu-yelp-api.herokuapp.com/api/all/' + currentLoca + '/' + thisGenre + '/9219';
+    var foodURL = 'https://cors-anywhere.herokuapp.com/https://tvgp-yelp-api.herokuapp.com/api/' + currentLoca + '/' //+ thisGenre + '/9219';
+    console.log(foodURL);
                 $.ajax({
                     url: foodURL,
                     method: "GET"
@@ -13,10 +14,16 @@ var foodRender = function(thisGenre){
                 * @callback
                 */
                 }).then(function (response) {
-                    var obj = JSON.parse(response);
+                    var obj = response;
+                    var objFiltered = [];
+                    for (i = 0; i<obj.length; i++){
+                        if (obj[i].price === thisGenre){
+                            objFiltered.push(obj[i])
+                        }
+                    }
                     var thisHTML = "";
-                    for (i = 0; i < 8; i++) {
-                        thisHTML += "<div class='btn-group-justified'><div class='btn-group'><button class='optionButtonFood btn btn-primary' value = " + i + ">" + obj.businesses[i].name + "</button></div></div>";
+                    for (i = 0; i < objFiltered.length; i++) {
+                        thisHTML += "<div class='btn-group-justified'><div class='btn-group'><button class='optionButtonFood btn btn-primary' value = " + i + ">" + objFiltered[i].name + "</button></div></div>";
                         };
                     $(".buttonAppendHere").html(thisHTML)
                     /**
@@ -27,7 +34,7 @@ var foodRender = function(thisGenre){
                         if (displayArray.length === 4) { alert("Please clear a box") }
                         else {
                             var currentFoodVal = $(this).val();
-                            var foodHTMLToAdd = "<div class='col-md-2 currentOptions thumbnail'><button class='x'>X</button><img src=" + obj.businesses[currentFoodVal].image_url + " alt="+ obj.businesses[currentFoodVal].name + " class = 'displayPhoto' /><ul><li>" + obj.businesses[currentFoodVal].name + "</li><li>" + obj.businesses[currentFoodVal].categories[0].title + "</li><li>" + obj.businesses[currentFoodVal].display_phone + "</li><li><a href=" + obj.businesses[currentFoodVal].url + ">Yelp Link</a></li></ul></div>";
+                            var foodHTMLToAdd = "<div class='col-md-2 currentOptions thumbnail'><button class='x'>X</button><img src=" + objFiltered[currentFoodVal].image_url + " alt="+ objFiltered[currentFoodVal].name + " class = 'displayPhoto' /><ul><li>" + objFiltered[currentFoodVal].name + "</li><li>" + objFiltered[currentFoodVal].categories[0].title + "</li><li>" + objFiltered[currentFoodVal].display_phone + "</li><li><a href=" + objFiltered[currentFoodVal].url + ">Yelp Link</a></li></ul></div>";
                             /** @global */
                             displayArray.push(foodHTMLToAdd);
                             render();
